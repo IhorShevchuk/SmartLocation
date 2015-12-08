@@ -1,0 +1,536 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		846EBFC31C178403004CD34E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 846EBFC21C178403004CD34E /* main.m */; };
+		846EBFC61C178403004CD34E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 846EBFC51C178403004CD34E /* AppDelegate.m */; };
+		846EBFC91C178403004CD34E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846EBFC81C178403004CD34E /* ViewController.m */; };
+		846EBFCC1C178403004CD34E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846EBFCA1C178403004CD34E /* Main.storyboard */; };
+		846EBFCF1C178403004CD34E /* smartplaces.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 846EBFCD1C178403004CD34E /* smartplaces.xcdatamodeld */; };
+		846EBFD11C178403004CD34E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 846EBFD01C178403004CD34E /* Assets.xcassets */; };
+		846EBFD41C178403004CD34E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846EBFD21C178403004CD34E /* LaunchScreen.storyboard */; };
+		846EBFDF1C178403004CD34E /* smartplacesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 846EBFDE1C178403004CD34E /* smartplacesTests.m */; };
+		846EBFEA1C178403004CD34E /* smartplacesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 846EBFE91C178403004CD34E /* smartplacesUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		846EBFDB1C178403004CD34E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 846EBFB61C178403004CD34E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 846EBFBD1C178403004CD34E;
+			remoteInfo = smartplaces;
+		};
+		846EBFE61C178403004CD34E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 846EBFB61C178403004CD34E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 846EBFBD1C178403004CD34E;
+			remoteInfo = smartplaces;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		846EBFBE1C178403004CD34E /* smartplaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smartplaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		846EBFC21C178403004CD34E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		846EBFC41C178403004CD34E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		846EBFC51C178403004CD34E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		846EBFC71C178403004CD34E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		846EBFC81C178403004CD34E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		846EBFCB1C178403004CD34E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		846EBFCE1C178403004CD34E /* smartplaces.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = smartplaces.xcdatamodel; sourceTree = "<group>"; };
+		846EBFD01C178403004CD34E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		846EBFD31C178403004CD34E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		846EBFD51C178403004CD34E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		846EBFDA1C178403004CD34E /* smartplacesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = smartplacesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		846EBFDE1C178403004CD34E /* smartplacesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = smartplacesTests.m; sourceTree = "<group>"; };
+		846EBFE01C178403004CD34E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		846EBFE51C178403004CD34E /* smartplacesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = smartplacesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		846EBFE91C178403004CD34E /* smartplacesUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = smartplacesUITests.m; sourceTree = "<group>"; };
+		846EBFEB1C178403004CD34E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		846EBFBB1C178403004CD34E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		846EBFD71C178403004CD34E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		846EBFE21C178403004CD34E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		846EBFB51C178403004CD34E = {
+			isa = PBXGroup;
+			children = (
+				846EBFC01C178403004CD34E /* smartplaces */,
+				846EBFDD1C178403004CD34E /* smartplacesTests */,
+				846EBFE81C178403004CD34E /* smartplacesUITests */,
+				846EBFBF1C178403004CD34E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		846EBFBF1C178403004CD34E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				846EBFBE1C178403004CD34E /* smartplaces.app */,
+				846EBFDA1C178403004CD34E /* smartplacesTests.xctest */,
+				846EBFE51C178403004CD34E /* smartplacesUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		846EBFC01C178403004CD34E /* smartplaces */ = {
+			isa = PBXGroup;
+			children = (
+				846EBFC41C178403004CD34E /* AppDelegate.h */,
+				846EBFC51C178403004CD34E /* AppDelegate.m */,
+				846EBFC71C178403004CD34E /* ViewController.h */,
+				846EBFC81C178403004CD34E /* ViewController.m */,
+				846EBFCA1C178403004CD34E /* Main.storyboard */,
+				846EBFD01C178403004CD34E /* Assets.xcassets */,
+				846EBFD21C178403004CD34E /* LaunchScreen.storyboard */,
+				846EBFD51C178403004CD34E /* Info.plist */,
+				846EBFCD1C178403004CD34E /* smartplaces.xcdatamodeld */,
+				846EBFC11C178403004CD34E /* Supporting Files */,
+			);
+			path = smartplaces;
+			sourceTree = "<group>";
+		};
+		846EBFC11C178403004CD34E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				846EBFC21C178403004CD34E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		846EBFDD1C178403004CD34E /* smartplacesTests */ = {
+			isa = PBXGroup;
+			children = (
+				846EBFDE1C178403004CD34E /* smartplacesTests.m */,
+				846EBFE01C178403004CD34E /* Info.plist */,
+			);
+			path = smartplacesTests;
+			sourceTree = "<group>";
+		};
+		846EBFE81C178403004CD34E /* smartplacesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				846EBFE91C178403004CD34E /* smartplacesUITests.m */,
+				846EBFEB1C178403004CD34E /* Info.plist */,
+			);
+			path = smartplacesUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		846EBFBD1C178403004CD34E /* smartplaces */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 846EBFEE1C178404004CD34E /* Build configuration list for PBXNativeTarget "smartplaces" */;
+			buildPhases = (
+				846EBFBA1C178403004CD34E /* Sources */,
+				846EBFBB1C178403004CD34E /* Frameworks */,
+				846EBFBC1C178403004CD34E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = smartplaces;
+			productName = smartplaces;
+			productReference = 846EBFBE1C178403004CD34E /* smartplaces.app */;
+			productType = "com.apple.product-type.application";
+		};
+		846EBFD91C178403004CD34E /* smartplacesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 846EBFF11C178404004CD34E /* Build configuration list for PBXNativeTarget "smartplacesTests" */;
+			buildPhases = (
+				846EBFD61C178403004CD34E /* Sources */,
+				846EBFD71C178403004CD34E /* Frameworks */,
+				846EBFD81C178403004CD34E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				846EBFDC1C178403004CD34E /* PBXTargetDependency */,
+			);
+			name = smartplacesTests;
+			productName = smartplacesTests;
+			productReference = 846EBFDA1C178403004CD34E /* smartplacesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		846EBFE41C178403004CD34E /* smartplacesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 846EBFF41C178404004CD34E /* Build configuration list for PBXNativeTarget "smartplacesUITests" */;
+			buildPhases = (
+				846EBFE11C178403004CD34E /* Sources */,
+				846EBFE21C178403004CD34E /* Frameworks */,
+				846EBFE31C178403004CD34E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				846EBFE71C178403004CD34E /* PBXTargetDependency */,
+			);
+			name = smartplacesUITests;
+			productName = smartplacesUITests;
+			productReference = 846EBFE51C178403004CD34E /* smartplacesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		846EBFB61C178403004CD34E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = ihor;
+				TargetAttributes = {
+					846EBFBD1C178403004CD34E = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					846EBFD91C178403004CD34E = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = 846EBFBD1C178403004CD34E;
+					};
+					846EBFE41C178403004CD34E = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = 846EBFBD1C178403004CD34E;
+					};
+				};
+			};
+			buildConfigurationList = 846EBFB91C178403004CD34E /* Build configuration list for PBXProject "smartplaces" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 846EBFB51C178403004CD34E;
+			productRefGroup = 846EBFBF1C178403004CD34E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				846EBFBD1C178403004CD34E /* smartplaces */,
+				846EBFD91C178403004CD34E /* smartplacesTests */,
+				846EBFE41C178403004CD34E /* smartplacesUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		846EBFBC1C178403004CD34E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				846EBFD41C178403004CD34E /* LaunchScreen.storyboard in Resources */,
+				846EBFD11C178403004CD34E /* Assets.xcassets in Resources */,
+				846EBFCC1C178403004CD34E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		846EBFD81C178403004CD34E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		846EBFE31C178403004CD34E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		846EBFBA1C178403004CD34E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				846EBFC91C178403004CD34E /* ViewController.m in Sources */,
+				846EBFC61C178403004CD34E /* AppDelegate.m in Sources */,
+				846EBFC31C178403004CD34E /* main.m in Sources */,
+				846EBFCF1C178403004CD34E /* smartplaces.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		846EBFD61C178403004CD34E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				846EBFDF1C178403004CD34E /* smartplacesTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		846EBFE11C178403004CD34E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				846EBFEA1C178403004CD34E /* smartplacesUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		846EBFDC1C178403004CD34E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 846EBFBD1C178403004CD34E /* smartplaces */;
+			targetProxy = 846EBFDB1C178403004CD34E /* PBXContainerItemProxy */;
+		};
+		846EBFE71C178403004CD34E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 846EBFBD1C178403004CD34E /* smartplaces */;
+			targetProxy = 846EBFE61C178403004CD34E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		846EBFCA1C178403004CD34E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				846EBFCB1C178403004CD34E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		846EBFD21C178403004CD34E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				846EBFD31C178403004CD34E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		846EBFEC1C178404004CD34E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		846EBFED1C178404004CD34E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		846EBFEF1C178404004CD34E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = smartplaces/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ihor.smartplaces;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		846EBFF01C178404004CD34E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = smartplaces/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ihor.smartplaces;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		846EBFF21C178404004CD34E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = smartplacesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ihor.smartplacesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/smartplaces.app/smartplaces";
+			};
+			name = Debug;
+		};
+		846EBFF31C178404004CD34E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = smartplacesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ihor.smartplacesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/smartplaces.app/smartplaces";
+			};
+			name = Release;
+		};
+		846EBFF51C178404004CD34E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = smartplacesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ihor.smartplacesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = smartplaces;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		846EBFF61C178404004CD34E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = smartplacesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ihor.smartplacesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = smartplaces;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		846EBFB91C178403004CD34E /* Build configuration list for PBXProject "smartplaces" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				846EBFEC1C178404004CD34E /* Debug */,
+				846EBFED1C178404004CD34E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		846EBFEE1C178404004CD34E /* Build configuration list for PBXNativeTarget "smartplaces" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				846EBFEF1C178404004CD34E /* Debug */,
+				846EBFF01C178404004CD34E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		846EBFF11C178404004CD34E /* Build configuration list for PBXNativeTarget "smartplacesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				846EBFF21C178404004CD34E /* Debug */,
+				846EBFF31C178404004CD34E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		846EBFF41C178404004CD34E /* Build configuration list for PBXNativeTarget "smartplacesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				846EBFF51C178404004CD34E /* Debug */,
+				846EBFF61C178404004CD34E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		846EBFCD1C178403004CD34E /* smartplaces.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				846EBFCE1C178403004CD34E /* smartplaces.xcdatamodel */,
+			);
+			currentVersion = 846EBFCE1C178403004CD34E /* smartplaces.xcdatamodel */;
+			path = smartplaces.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 846EBFB61C178403004CD34E /* Project object */;
+}
