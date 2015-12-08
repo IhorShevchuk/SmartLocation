@@ -7,6 +7,8 @@
 //
 
 #import "SPSPLoginViewController.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @interface SPSPLoginViewController ()
 
@@ -17,6 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
+    loginButton.center = self.view.center;
+    [self.view addSubview:loginButton];
 }
 
 - (void)didReceiveMemoryWarning {
