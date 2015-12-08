@@ -7,15 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		846EBFC31C178403004CD34E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 846EBFC21C178403004CD34E /* main.m */; };
-		846EBFC61C178403004CD34E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 846EBFC51C178403004CD34E /* AppDelegate.m */; };
-		846EBFC91C178403004CD34E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846EBFC81C178403004CD34E /* ViewController.m */; };
-		846EBFCC1C178403004CD34E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846EBFCA1C178403004CD34E /* Main.storyboard */; };
-		846EBFCF1C178403004CD34E /* smartplaces.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 846EBFCD1C178403004CD34E /* smartplaces.xcdatamodeld */; };
-		846EBFD11C178403004CD34E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 846EBFD01C178403004CD34E /* Assets.xcassets */; };
-		846EBFD41C178403004CD34E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846EBFD21C178403004CD34E /* LaunchScreen.storyboard */; };
 		846EBFDF1C178403004CD34E /* smartplacesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 846EBFDE1C178403004CD34E /* smartplacesTests.m */; };
 		846EBFEA1C178403004CD34E /* smartplacesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 846EBFE91C178403004CD34E /* smartplacesUITests.m */; };
+		846EC00D1C178591004CD34E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 846EBFFA1C178591004CD34E /* AppDelegate.m */; };
+		846EC00E1C178591004CD34E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 846EBFFB1C178591004CD34E /* Info.plist */; };
+		846EC00F1C178591004CD34E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 846EBFFC1C178591004CD34E /* main.m */; };
+		846EC0101C178591004CD34E /* smartplaces.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 846EC0031C178591004CD34E /* smartplaces.xcdatamodeld */; };
+		846EC0111C178591004CD34E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 846EC0081C178591004CD34E /* Assets.xcassets */; };
+		846EC0121C178591004CD34E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846EC00B1C178591004CD34E /* LaunchScreen.storyboard */; };
+		846EC0131C178591004CD34E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846EC00C1C178591004CD34E /* Main.storyboard */; };
+		846EC01C1C1786B7004CD34E /* SPSPLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846EC01B1C1786B7004CD34E /* SPSPLoginViewController.m */; };
+		846EC0241C178AA4004CD34E /* FacebookSDKStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 846EC01F1C178AA4004CD34E /* FacebookSDKStrings.bundle */; };
+		846EC0251C178AA4004CD34E /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846EC0201C178AA4004CD34E /* FBSDKCoreKit.framework */; };
+		846EC0261C178AA4004CD34E /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846EC0211C178AA4004CD34E /* FBSDKLoginKit.framework */; };
+		846EC0271C178AA4004CD34E /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846EC0221C178AA4004CD34E /* FBSDKShareKit.framework */; };
+		846EC0281C178AA4004CD34E /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 846EC0231C178AA4004CD34E /* LICENSE.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,22 +43,27 @@
 
 /* Begin PBXFileReference section */
 		846EBFBE1C178403004CD34E /* smartplaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smartplaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		846EBFC21C178403004CD34E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		846EBFC41C178403004CD34E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		846EBFC51C178403004CD34E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		846EBFC71C178403004CD34E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		846EBFC81C178403004CD34E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		846EBFCB1C178403004CD34E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		846EBFCE1C178403004CD34E /* smartplaces.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = smartplaces.xcdatamodel; sourceTree = "<group>"; };
-		846EBFD01C178403004CD34E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		846EBFD31C178403004CD34E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		846EBFD51C178403004CD34E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		846EBFDA1C178403004CD34E /* smartplacesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = smartplacesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		846EBFDE1C178403004CD34E /* smartplacesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = smartplacesTests.m; sourceTree = "<group>"; };
 		846EBFE01C178403004CD34E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		846EBFE51C178403004CD34E /* smartplacesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = smartplacesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		846EBFE91C178403004CD34E /* smartplacesUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = smartplacesUITests.m; sourceTree = "<group>"; };
 		846EBFEB1C178403004CD34E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		846EBFF91C178591004CD34E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		846EBFFA1C178591004CD34E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		846EBFFB1C178591004CD34E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		846EBFFC1C178591004CD34E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		846EC0041C178591004CD34E /* smartplaces.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = smartplaces.xcdatamodel; sourceTree = "<group>"; };
+		846EC0081C178591004CD34E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		846EC00B1C178591004CD34E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		846EC00C1C178591004CD34E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		846EC01A1C1786B7004CD34E /* SPSPLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSPLoginViewController.h; sourceTree = "<group>"; };
+		846EC01B1C1786B7004CD34E /* SPSPLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPSPLoginViewController.m; sourceTree = "<group>"; };
+		846EC01F1C178AA4004CD34E /* FacebookSDKStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKStrings.bundle; sourceTree = "<group>"; };
+		846EC0201C178AA4004CD34E /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		846EC0211C178AA4004CD34E /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		846EC0221C178AA4004CD34E /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		846EC0231C178AA4004CD34E /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +71,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				846EC0261C178AA4004CD34E /* FBSDKLoginKit.framework in Frameworks */,
+				846EC0251C178AA4004CD34E /* FBSDKCoreKit.framework in Frameworks */,
+				846EC0271C178AA4004CD34E /* FBSDKShareKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,7 +97,7 @@
 		846EBFB51C178403004CD34E = {
 			isa = PBXGroup;
 			children = (
-				846EBFC01C178403004CD34E /* smartplaces */,
+				846EBFF71C178591004CD34E /* smartplaces */,
 				846EBFDD1C178403004CD34E /* smartplacesTests */,
 				846EBFE81C178403004CD34E /* smartplacesUITests */,
 				846EBFBF1C178403004CD34E /* Products */,
@@ -98,31 +112,6 @@
 				846EBFE51C178403004CD34E /* smartplacesUITests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		846EBFC01C178403004CD34E /* smartplaces */ = {
-			isa = PBXGroup;
-			children = (
-				846EBFC41C178403004CD34E /* AppDelegate.h */,
-				846EBFC51C178403004CD34E /* AppDelegate.m */,
-				846EBFC71C178403004CD34E /* ViewController.h */,
-				846EBFC81C178403004CD34E /* ViewController.m */,
-				846EBFCA1C178403004CD34E /* Main.storyboard */,
-				846EBFD01C178403004CD34E /* Assets.xcassets */,
-				846EBFD21C178403004CD34E /* LaunchScreen.storyboard */,
-				846EBFD51C178403004CD34E /* Info.plist */,
-				846EBFCD1C178403004CD34E /* smartplaces.xcdatamodeld */,
-				846EBFC11C178403004CD34E /* Supporting Files */,
-			);
-			path = smartplaces;
-			sourceTree = "<group>";
-		};
-		846EBFC11C178403004CD34E /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				846EBFC21C178403004CD34E /* main.m */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		846EBFDD1C178403004CD34E /* smartplacesTests */ = {
@@ -141,6 +130,172 @@
 				846EBFEB1C178403004CD34E /* Info.plist */,
 			);
 			path = smartplacesUITests;
+			sourceTree = "<group>";
+		};
+		846EBFF71C178591004CD34E /* smartplaces */ = {
+			isa = PBXGroup;
+			children = (
+				846EBFF81C178591004CD34E /* Aplication */,
+				846EBFFD1C178591004CD34E /* Categories */,
+				846EBFFE1C178591004CD34E /* Controllers */,
+				846EBFFF1C178591004CD34E /* Core */,
+				846EC0001C178591004CD34E /* Frameworks */,
+				846EC0011C178591004CD34E /* Models */,
+				846EC0051C178591004CD34E /* Resources */,
+				846EC0091C178591004CD34E /* UI */,
+			);
+			path = smartplaces;
+			sourceTree = "<group>";
+		};
+		846EBFF81C178591004CD34E /* Aplication */ = {
+			isa = PBXGroup;
+			children = (
+				846EBFF91C178591004CD34E /* AppDelegate.h */,
+				846EBFFA1C178591004CD34E /* AppDelegate.m */,
+				846EBFFB1C178591004CD34E /* Info.plist */,
+				846EBFFC1C178591004CD34E /* main.m */,
+			);
+			path = Aplication;
+			sourceTree = "<group>";
+		};
+		846EBFFD1C178591004CD34E /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		846EBFFE1C178591004CD34E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				846EC0191C178696004CD34E /* SPLoginViewController */,
+				846EC0181C178696004CD34E /* SPMapViewController */,
+				846EC0171C178696004CD34E /* SPSavedPlacesViewController */,
+				846EC0151C17868E004CD34E /* SPSideMenuViewController */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		846EBFFF1C178591004CD34E /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		846EC0001C178591004CD34E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				846EC01D1C1789CF004CD34E /* WithOutSourceCode */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		846EC0011C178591004CD34E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				846EC0021C178591004CD34E /* CoreData */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		846EC0021C178591004CD34E /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				846EC0031C178591004CD34E /* smartplaces.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		846EC0051C178591004CD34E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				846EC0061C178591004CD34E /* images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		846EC0061C178591004CD34E /* images */ = {
+			isa = PBXGroup;
+			children = (
+				846EC0071C178591004CD34E /* xcassets */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		846EC0071C178591004CD34E /* xcassets */ = {
+			isa = PBXGroup;
+			children = (
+				846EC0081C178591004CD34E /* Assets.xcassets */,
+			);
+			path = xcassets;
+			sourceTree = "<group>";
+		};
+		846EC0091C178591004CD34E /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				846EC00A1C178591004CD34E /* Storyboards */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		846EC00A1C178591004CD34E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				846EC00B1C178591004CD34E /* LaunchScreen.storyboard */,
+				846EC00C1C178591004CD34E /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		846EC0151C17868E004CD34E /* SPSideMenuViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SPSideMenuViewController;
+			sourceTree = "<group>";
+		};
+		846EC0171C178696004CD34E /* SPSavedPlacesViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SPSavedPlacesViewController;
+			sourceTree = "<group>";
+		};
+		846EC0181C178696004CD34E /* SPMapViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SPMapViewController;
+			sourceTree = "<group>";
+		};
+		846EC0191C178696004CD34E /* SPLoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				846EC01A1C1786B7004CD34E /* SPSPLoginViewController.h */,
+				846EC01B1C1786B7004CD34E /* SPSPLoginViewController.m */,
+			);
+			path = SPLoginViewController;
+			sourceTree = "<group>";
+		};
+		846EC01D1C1789CF004CD34E /* WithOutSourceCode */ = {
+			isa = PBXGroup;
+			children = (
+				846EC01E1C178AA4004CD34E /* FacebookSDK */,
+			);
+			path = WithOutSourceCode;
+			sourceTree = "<group>";
+		};
+		846EC01E1C178AA4004CD34E /* FacebookSDK */ = {
+			isa = PBXGroup;
+			children = (
+				846EC01F1C178AA4004CD34E /* FacebookSDKStrings.bundle */,
+				846EC0201C178AA4004CD34E /* FBSDKCoreKit.framework */,
+				846EC0211C178AA4004CD34E /* FBSDKLoginKit.framework */,
+				846EC0221C178AA4004CD34E /* FBSDKShareKit.framework */,
+				846EC0231C178AA4004CD34E /* LICENSE.txt */,
+			);
+			path = FacebookSDK;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,6 +360,7 @@
 		846EBFB61C178403004CD34E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = SP;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = ihor;
 				TargetAttributes = {
@@ -246,9 +402,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				846EBFD41C178403004CD34E /* LaunchScreen.storyboard in Resources */,
-				846EBFD11C178403004CD34E /* Assets.xcassets in Resources */,
-				846EBFCC1C178403004CD34E /* Main.storyboard in Resources */,
+				846EC0281C178AA4004CD34E /* LICENSE.txt in Resources */,
+				846EC0121C178591004CD34E /* LaunchScreen.storyboard in Resources */,
+				846EC0241C178AA4004CD34E /* FacebookSDKStrings.bundle in Resources */,
+				846EC0111C178591004CD34E /* Assets.xcassets in Resources */,
+				846EC00E1C178591004CD34E /* Info.plist in Resources */,
+				846EC0131C178591004CD34E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,10 +432,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				846EBFC91C178403004CD34E /* ViewController.m in Sources */,
-				846EBFC61C178403004CD34E /* AppDelegate.m in Sources */,
-				846EBFC31C178403004CD34E /* main.m in Sources */,
-				846EBFCF1C178403004CD34E /* smartplaces.xcdatamodeld in Sources */,
+				846EC00F1C178591004CD34E /* main.m in Sources */,
+				846EC0101C178591004CD34E /* smartplaces.xcdatamodeld in Sources */,
+				846EC01C1C1786B7004CD34E /* SPSPLoginViewController.m in Sources */,
+				846EC00D1C178591004CD34E /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,25 +469,6 @@
 			targetProxy = 846EBFE61C178403004CD34E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		846EBFCA1C178403004CD34E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				846EBFCB1C178403004CD34E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		846EBFD21C178403004CD34E /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				846EBFD31C178403004CD34E /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		846EBFEC1C178404004CD34E /* Debug */ = {
@@ -415,7 +555,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = smartplaces/Info.plist;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/smartplaces/Frameworks/WithOutSourceCode/FacebookSDK",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/smartplaces/Aplication/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ihor.smartplaces;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -426,7 +572,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = smartplaces/Info.plist;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/smartplaces/Frameworks/WithOutSourceCode/FacebookSDK",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/smartplaces/Aplication/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ihor.smartplaces;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -500,6 +652,7 @@
 				846EBFF01C178404004CD34E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		846EBFF11C178404004CD34E /* Build configuration list for PBXNativeTarget "smartplacesTests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +661,7 @@
 				846EBFF31C178404004CD34E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		846EBFF41C178404004CD34E /* Build configuration list for PBXNativeTarget "smartplacesUITests" */ = {
 			isa = XCConfigurationList;
@@ -516,16 +670,17 @@
 				846EBFF61C178404004CD34E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		846EBFCD1C178403004CD34E /* smartplaces.xcdatamodeld */ = {
+		846EC0031C178591004CD34E /* smartplaces.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				846EBFCE1C178403004CD34E /* smartplaces.xcdatamodel */,
+				846EC0041C178591004CD34E /* smartplaces.xcdatamodel */,
 			);
-			currentVersion = 846EBFCE1C178403004CD34E /* smartplaces.xcdatamodel */;
+			currentVersion = 846EC0041C178591004CD34E /* smartplaces.xcdatamodel */;
 			path = smartplaces.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
