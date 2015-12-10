@@ -7,6 +7,8 @@
 //
 
 #import "SPLoginViewController.h"
+#import "SPFacebookUser+Converter.h"
+#import "SPUserManager.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 
@@ -19,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    SPFacebookUser *user = [SPUserManager getCurrentUser]   ; NSLog(@"%@",user);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,7 +49,8 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
          startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
              if (!error)
              {
-                 NSLog(@"resultis:%@",result);
+                 SPFacebookUser *loggedUser = [SPFacebookUser userFromFacebookResponce:result];
+                 [SPUserManager saveToKeyChainUser:loggedUser];
              }
              else
              {

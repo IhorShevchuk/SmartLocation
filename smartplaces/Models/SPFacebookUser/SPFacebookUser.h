@@ -9,5 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface SPFacebookUser : NSObject
-
+@property (nonatomic, strong) NSString *identifire;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *avatarUrl;
 @end

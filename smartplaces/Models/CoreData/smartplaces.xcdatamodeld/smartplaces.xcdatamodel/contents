@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15C50" minimumToolsVersion="Automatic">
+    <entity name="SPPlace" representedClassName="SPPlace" syncable="YES">
+        <attribute name="formattedAddres" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lat" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="lon" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SPUser" inverseName="places" inverseEntity="SPUser" syncable="YES"/>
+    </entity>
+    <entity name="SPUser" representedClassName="SPUser" syncable="YES">
+        <attribute name="identifire" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="places" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SPPlace" inverseName="user" inverseEntity="SPPlace" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="SPUser" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="SPPlace" positionX="-54" positionY="-9" width="128" height="120"/>
+    </elements>
 </model>

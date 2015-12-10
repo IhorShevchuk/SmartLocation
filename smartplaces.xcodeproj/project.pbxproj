@@ -7,10 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		844E48AA1C1A2C990022250A /* SPFacebookUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 844E48A91C1A2C990022250A /* SPFacebookUser.m */; };
+		844E48AD1C1A2CB70022250A /* SPFacebookUser+Converter.m in Sources */ = {isa = PBXBuildFile; fileRef = 844E48AC1C1A2CB70022250A /* SPFacebookUser+Converter.m */; };
+		8458287E1C1A25CC00DF8568 /* SPUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8458287D1C1A25CC00DF8568 /* SPUserManager.m */; };
+		845828871C1A272C00DF8568 /* SPUser+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 845828801C1A272C00DF8568 /* SPUser+CoreDataProperties.m */; };
+		845828881C1A272C00DF8568 /* SPUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 845828821C1A272C00DF8568 /* SPUser.m */; };
+		845828891C1A272C00DF8568 /* SPPlace+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 845828841C1A272C00DF8568 /* SPPlace+CoreDataProperties.m */; };
+		8458288A1C1A272C00DF8568 /* SPPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = 845828861C1A272C00DF8568 /* SPPlace.m */; };
+		8458288E1C1A276C00DF8568 /* SPCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8458288D1C1A276C00DF8568 /* SPCoreDataManager.m */; };
 		846EBFDF1C178403004CD34E /* smartplacesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 846EBFDE1C178403004CD34E /* smartplacesTests.m */; };
 		846EBFEA1C178403004CD34E /* smartplacesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 846EBFE91C178403004CD34E /* smartplacesUITests.m */; };
 		846EC00D1C178591004CD34E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 846EBFFA1C178591004CD34E /* AppDelegate.m */; };
-		846EC00E1C178591004CD34E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 846EBFFB1C178591004CD34E /* Info.plist */; };
 		846EC00F1C178591004CD34E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 846EBFFC1C178591004CD34E /* main.m */; };
 		846EC0101C178591004CD34E /* smartplaces.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 846EC0031C178591004CD34E /* smartplaces.xcdatamodeld */; };
 		846EC0111C178591004CD34E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 846EC0081C178591004CD34E /* Assets.xcassets */; };
@@ -44,6 +51,22 @@
 
 /* Begin PBXFileReference section */
 		6A6078500B6C8E82CE0EC621 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		844E48A81C1A2C990022250A /* SPFacebookUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPFacebookUser.h; sourceTree = "<group>"; };
+		844E48A91C1A2C990022250A /* SPFacebookUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPFacebookUser.m; sourceTree = "<group>"; };
+		844E48AB1C1A2CB70022250A /* SPFacebookUser+Converter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPFacebookUser+Converter.h"; sourceTree = "<group>"; };
+		844E48AC1C1A2CB70022250A /* SPFacebookUser+Converter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPFacebookUser+Converter.m"; sourceTree = "<group>"; };
+		8458287C1C1A25CC00DF8568 /* SPUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPUserManager.h; sourceTree = "<group>"; };
+		8458287D1C1A25CC00DF8568 /* SPUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPUserManager.m; sourceTree = "<group>"; };
+		8458287F1C1A272C00DF8568 /* SPUser+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPUser+CoreDataProperties.h"; sourceTree = "<group>"; };
+		845828801C1A272C00DF8568 /* SPUser+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPUser+CoreDataProperties.m"; sourceTree = "<group>"; };
+		845828811C1A272C00DF8568 /* SPUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPUser.h; sourceTree = "<group>"; };
+		845828821C1A272C00DF8568 /* SPUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPUser.m; sourceTree = "<group>"; };
+		845828831C1A272C00DF8568 /* SPPlace+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPPlace+CoreDataProperties.h"; sourceTree = "<group>"; };
+		845828841C1A272C00DF8568 /* SPPlace+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPPlace+CoreDataProperties.m"; sourceTree = "<group>"; };
+		845828851C1A272C00DF8568 /* SPPlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPPlace.h; sourceTree = "<group>"; };
+		845828861C1A272C00DF8568 /* SPPlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPPlace.m; sourceTree = "<group>"; };
+		8458288C1C1A276C00DF8568 /* SPCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPCoreDataManager.h; sourceTree = "<group>"; };
+		8458288D1C1A276C00DF8568 /* SPCoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPCoreDataManager.m; sourceTree = "<group>"; };
 		846EBFBE1C178403004CD34E /* smartplaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smartplaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		846EBFDA1C178403004CD34E /* smartplacesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = smartplacesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		846EBFDE1C178403004CD34E /* smartplacesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = smartplacesTests.m; sourceTree = "<group>"; };
@@ -99,6 +122,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		844E48A71C1A2C850022250A /* SPFacebookUser */ = {
+			isa = PBXGroup;
+			children = (
+				844E48A81C1A2C990022250A /* SPFacebookUser.h */,
+				844E48A91C1A2C990022250A /* SPFacebookUser.m */,
+				844E48AB1C1A2CB70022250A /* SPFacebookUser+Converter.h */,
+				844E48AC1C1A2CB70022250A /* SPFacebookUser+Converter.m */,
+			);
+			path = SPFacebookUser;
+			sourceTree = "<group>";
+		};
+		8458287B1C1A259100DF8568 /* SPUserManager */ = {
+			isa = PBXGroup;
+			children = (
+				8458287C1C1A25CC00DF8568 /* SPUserManager.h */,
+				8458287D1C1A25CC00DF8568 /* SPUserManager.m */,
+			);
+			path = SPUserManager;
+			sourceTree = "<group>";
+		};
+		8458288B1C1A275800DF8568 /* SPCoreDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				8458288C1C1A276C00DF8568 /* SPCoreDataManager.h */,
+				8458288D1C1A276C00DF8568 /* SPCoreDataManager.m */,
+			);
+			path = SPCoreDataManager;
+			sourceTree = "<group>";
+		};
 		846EBFB51C178403004CD34E = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +238,8 @@
 		846EBFFF1C178591004CD34E /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				8458288B1C1A275800DF8568 /* SPCoreDataManager */,
+				8458287B1C1A259100DF8568 /* SPUserManager */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -201,6 +255,7 @@
 		846EC0011C178591004CD34E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				844E48A71C1A2C850022250A /* SPFacebookUser */,
 				846EC0021C178591004CD34E /* CoreData */,
 			);
 			path = Models;
@@ -209,6 +264,14 @@
 		846EC0021C178591004CD34E /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				8458287F1C1A272C00DF8568 /* SPUser+CoreDataProperties.h */,
+				845828801C1A272C00DF8568 /* SPUser+CoreDataProperties.m */,
+				845828811C1A272C00DF8568 /* SPUser.h */,
+				845828821C1A272C00DF8568 /* SPUser.m */,
+				845828831C1A272C00DF8568 /* SPPlace+CoreDataProperties.h */,
+				845828841C1A272C00DF8568 /* SPPlace+CoreDataProperties.m */,
+				845828851C1A272C00DF8568 /* SPPlace.h */,
+				845828861C1A272C00DF8568 /* SPPlace.m */,
 				846EC0031C178591004CD34E /* smartplaces.xcdatamodeld */,
 			);
 			path = CoreData;
@@ -388,7 +451,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = SP;
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = ihor;
 				TargetAttributes = {
 					846EBFBD1C178403004CD34E = {
@@ -433,7 +496,6 @@
 				846EC0121C178591004CD34E /* LaunchScreen.storyboard in Resources */,
 				846EC0241C178AA4004CD34E /* FacebookSDKStrings.bundle in Resources */,
 				846EC0111C178591004CD34E /* Assets.xcassets in Resources */,
-				846EC00E1C178591004CD34E /* Info.plist in Resources */,
 				846EC0131C178591004CD34E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -508,9 +570,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				846EC00F1C178591004CD34E /* main.m in Sources */,
+				845828871C1A272C00DF8568 /* SPUser+CoreDataProperties.m in Sources */,
+				844E48AA1C1A2C990022250A /* SPFacebookUser.m in Sources */,
+				845828891C1A272C00DF8568 /* SPPlace+CoreDataProperties.m in Sources */,
+				845828881C1A272C00DF8568 /* SPUser.m in Sources */,
 				846EC0101C178591004CD34E /* smartplaces.xcdatamodeld in Sources */,
 				846EC01C1C1786B7004CD34E /* SPLoginViewController.m in Sources */,
+				8458288A1C1A272C00DF8568 /* SPPlace.m in Sources */,
+				844E48AD1C1A2CB70022250A /* SPFacebookUser+Converter.m in Sources */,
+				8458287E1C1A25CC00DF8568 /* SPUserManager.m in Sources */,
 				846EC00D1C178591004CD34E /* AppDelegate.m in Sources */,
+				8458288E1C1A276C00DF8568 /* SPCoreDataManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

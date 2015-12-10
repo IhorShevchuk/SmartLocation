@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "SPFacebookUser.h"
 @interface SPUserManager : NSObject
-
++(void)saveToKeyChainUser:(SPFacebookUser*)user;
++(SPFacebookUser*)getCurrentUser;
 @end

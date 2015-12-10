@@ -6,8 +6,8 @@
 //  Copyright © 2015 ihor. All rights reserved.
 //
 
-
+#import "SPFacebookUser.h"
 
 @interface SPFacebookUser (Converter)
-
++(instancetype)userFromFacebookResponce:(NSDictionary*)parameters;
 @end

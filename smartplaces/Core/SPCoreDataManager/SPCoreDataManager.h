@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SPPlace.h"
+#import "SPUser.h"
 
 @interface SPCoreDataManager : NSObject
-
++(SPUser*)getCurrentUser;
++(void)saveContext;
 @end
