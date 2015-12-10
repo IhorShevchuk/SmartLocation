@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SPSPLoginViewController : UIViewController
+@interface SPLoginViewController : UIViewController
 
 @end

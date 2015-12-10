@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15C47a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Login View Controller-->
+        <!--Delegate-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SPSPLoginViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SPLoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -18,35 +17,70 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yi-4c-2Rq">
-                                <rect key="frame" x="20" y="20" width="181" height="84"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCG-uS-uyb">
+                                <rect key="frame" x="115" y="278" width="209" height="82"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="P">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="70" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="laces">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="70" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Places" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCG-uS-uyb">
-                                <rect key="frame" x="111" y="112" width="200" height="84"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mapWithPin" translatesAutoresizingMaskIntoConstraints="NO" id="Waz-8d-wog">
+                                <rect key="frame" x="57" y="368" width="300" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="inC-A6-r3H"/>
+                                    <constraint firstAttribute="height" constant="130" id="vQg-d7-Tcc"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaS-di-F5T" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="192" y="518" width="30" height="30"/>
+                                <state key="normal" title="Log"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="2ln-ic-dng"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yi-4c-2Rq">
+                                <rect key="frame" x="20" y="188" width="189" height="82"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="S">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="70" name="HelveticaNeue"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="mart">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="70" name="HelveticaNeue"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="aaS-di-F5T" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3Zu-vA-x2U"/>
+                            <constraint firstItem="aaS-di-F5T" firstAttribute="top" secondItem="Waz-8d-wog" secondAttribute="bottom" constant="20" id="Dgt-ek-xAx"/>
+                            <constraint firstItem="Waz-8d-wog" firstAttribute="top" secondItem="OCG-uS-uyb" secondAttribute="bottom" constant="8" id="HB0-DJ-GOE"/>
                             <constraint firstItem="2yi-4c-2Rq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="YaC-PX-CUS"/>
-                            <constraint firstItem="2yi-4c-2Rq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="bbC-9a-mhk"/>
+                            <constraint firstItem="Waz-8d-wog" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Zve-kX-VFB"/>
                             <constraint firstItem="OCG-uS-uyb" firstAttribute="leading" secondItem="2yi-4c-2Rq" secondAttribute="centerX" id="fHs-bY-q7b"/>
                             <constraint firstItem="OCG-uS-uyb" firstAttribute="top" secondItem="2yi-4c-2Rq" secondAttribute="bottom" constant="8" id="k3Y-hM-2h5"/>
-                            <constraint firstItem="OCG-uS-uyb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="tHb-K1-0Jg"/>
+                            <constraint firstItem="Waz-8d-wog" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wvd-vs-X6a"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="tHb-K1-0Jg"/>
-                            </mask>
-                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </viewController>
@@ -55,4 +89,7 @@
             <point key="canvasLocation" x="243" y="299"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="mapWithPin" width="300" height="130"/>
+    </resources>
 </document>
