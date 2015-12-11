@@ -8,30 +8,64 @@
 
 #import "SPSideMenuViewController.h"
 
-@interface SPSideMenuViewController ()
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+
+#import "UIImageView+WebCache.h"
+
+#import "SPFacebookUser.h"
+#import "SPUserManager.h"
+
+@interface SPSideMenuViewController()
+@property (weak, nonatomic) IBOutlet UIImageView *usersAvatar;
+@property (weak, nonatomic) IBOutlet UILabel *usersNameLabel;
 
 @end
-
 @implementation SPSideMenuViewController
-
+#pragma mark - Life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self setupUser];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - UI
+- (void)setupUser {
+    self.usersAvatar.layer.cornerRadius = self.usersAvatar.frame.size.height / 2.0;
+    [self.usersAvatar setClipsToBounds:YES];
+    
+    SPFacebookUser *user = [SPUserManager getCurrentUser];
+    self.usersNameLabel.text = user.name.length > 0 ? user.name: @"New user";
+    [self.usersAvatar sd_setImageWithURL:[NSURL URLWithString:user.avatarUrl] placeholderImage:[UIImage imageNamed:@"avatarPlaceHolder"]];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - Buttons actions
+- (void)logoutAction:(id)sender {
+    FBSDKLoginManager *loginManager = [[FBSDKLoginManager alloc] init];
+    [loginManager logOut];
+    [FBSDKAccessToken setCurrentAccessToken:nil];
+    
+    [[JASidePanelController sharedInstance] toggleLeftPanel:self];
+    [SPUserManager clearCurrentUser];
+    [((UINavigationController*)[[JASidePanelController sharedInstance] centerPanel]) popToRootViewControllerAnimated:YES];
 }
-*/
-
+- (void)showMapAction:(id)sender {
+    
+}
+- (void)showListAction:(id)sender {
+    
+}
+#pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    switch (indexPath.row) {
+        case 1:
+        
+            break;
+        case 2:
+            
+            break;
+        case 3:
+            [self logoutAction:tableView];
+            break;
+        default:
+            break;
+    }
+}
 @end

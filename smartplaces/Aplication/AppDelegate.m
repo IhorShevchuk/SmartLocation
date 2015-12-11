@@ -14,8 +14,6 @@
 
 #import "JASidePanelController.h"
 
-#import "SPSideMenuViewController.h"
-
 @interface AppDelegate ()
 
 @end
@@ -27,7 +25,6 @@
     [FBSDKLoginButton class];
     // Override point for customization after application launch.
     
-    
     JASidePanelController *sideMenuController = [[JASidePanelController alloc] init];
     sideMenuController.leftPanel = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"SPSideMenuViewController"];
     sideMenuController.centerPanel = self.window.rootViewController;
@@ -37,6 +34,7 @@
     
     [[FBSDKApplicationDelegate sharedInstance] application:application
                              didFinishLaunchingWithOptions:launchOptions];
+    //TODO: clear keychain for first run
     return YES;
 }
 

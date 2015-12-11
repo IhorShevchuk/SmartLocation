@@ -22,18 +22,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    SPFacebookUser *user = [SPUserManager getCurrentUser]   ; NSLog(@"%@",user);
+    [self.facebookLoginButton setHidden:YES];
+}
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
     if([SPUserManager getCurrentUser]) {
         [self performSegueWithIdentifier:@"showMapView" sender:self];
     }
     else {
         //TODO: add Animations
         [self.facebookLoginButton setHidden:NO];
+        
     }
 }
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

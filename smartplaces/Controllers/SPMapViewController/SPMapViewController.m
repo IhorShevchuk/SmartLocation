@@ -7,7 +7,7 @@
 //
 
 #import "SPMapViewController.h"
-#import "JASidePanelController+fakeSharedInstance.h"
+#import "UINavigationBar+BackgroundColor.h"
 
 @interface SPMapViewController ()
 
@@ -20,7 +20,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setupNavigationBar];
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -43,6 +42,8 @@
     //TODO: add image
     UIBarButtonItem *goToMyLocationButton = [[UIBarButtonItem alloc]initWithImage:nil style:UIBarButtonItemStylePlain target:self action:@selector(goToMyLocation:)];
     self.navigationItem.rightBarButtonItem = goToMyLocationButton;
+    
+    [self.navigationController.navigationBar showWithColor:MainAppColor];
 }
 
 #pragma mark - Buttons Actions

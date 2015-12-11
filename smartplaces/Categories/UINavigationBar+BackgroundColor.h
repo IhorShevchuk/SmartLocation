@@ -1,5 +1,5 @@
 //
-//  SPSideMenuViewController.h
+//  UINavigationBar+BackgroundColor.h
 //  smartplaces
 //
 //  Created by Admin on 12/11/15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SPSideMenuViewController : UITableViewController
-
+@interface UINavigationBar (BackgroundColor)
+-(void)showWithColor:(UIColor *)color;
 @end

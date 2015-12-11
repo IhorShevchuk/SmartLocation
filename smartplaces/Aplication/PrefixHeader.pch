@@ -1,0 +1,18 @@
+//
+//  PrefixHeader.pch
+//  smartplaces
+//
+//  Created by Admin on 12/11/15.
+//  Copyright © 2015 ihor. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "JASidePanelController+fakeSharedInstance.h"
+#endif /* PrefixHeader_pch */
+
+#define MainAppColor [UIColor colorWithRed:255.0/255.0 green:204.0/255.0 blue:102.0/255.0 alpha:1.0]
