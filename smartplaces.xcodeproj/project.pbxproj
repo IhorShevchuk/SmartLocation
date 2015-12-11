@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		843935A41C1B602E006C6C14 /* JASidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843935931C1B602E006C6C14 /* JASidePanelController.m */; };
+		843935A51C1B602E006C6C14 /* UIViewController+JASidePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 843935951C1B602E006C6C14 /* UIViewController+JASidePanel.m */; };
+		843935AC1C1B6120006C6C14 /* SPSideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843935AB1C1B6120006C6C14 /* SPSideMenuViewController.m */; };
+		843935AF1C1B6245006C6C14 /* SPMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843935AE1C1B6245006C6C14 /* SPMapViewController.m */; };
+		843935B21C1B682B006C6C14 /* JASidePanelController+fakeSharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 843935B11C1B682B006C6C14 /* JASidePanelController+fakeSharedInstance.m */; };
 		844E48AA1C1A2C990022250A /* SPFacebookUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 844E48A91C1A2C990022250A /* SPFacebookUser.m */; };
 		844E48AD1C1A2CB70022250A /* SPFacebookUser+Converter.m in Sources */ = {isa = PBXBuildFile; fileRef = 844E48AC1C1A2CB70022250A /* SPFacebookUser+Converter.m */; };
 		8458287E1C1A25CC00DF8568 /* SPUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8458287D1C1A25CC00DF8568 /* SPUserManager.m */; };
@@ -51,6 +56,16 @@
 
 /* Begin PBXFileReference section */
 		6A6078500B6C8E82CE0EC621 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		843935921C1B602E006C6C14 /* JASidePanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JASidePanelController.h; sourceTree = "<group>"; };
+		843935931C1B602E006C6C14 /* JASidePanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JASidePanelController.m; sourceTree = "<group>"; };
+		843935941C1B602E006C6C14 /* UIViewController+JASidePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JASidePanel.h"; sourceTree = "<group>"; };
+		843935951C1B602E006C6C14 /* UIViewController+JASidePanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JASidePanel.m"; sourceTree = "<group>"; };
+		843935AA1C1B6120006C6C14 /* SPSideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSideMenuViewController.h; sourceTree = "<group>"; };
+		843935AB1C1B6120006C6C14 /* SPSideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPSideMenuViewController.m; sourceTree = "<group>"; };
+		843935AD1C1B6245006C6C14 /* SPMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPMapViewController.h; sourceTree = "<group>"; };
+		843935AE1C1B6245006C6C14 /* SPMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPMapViewController.m; sourceTree = "<group>"; };
+		843935B01C1B682B006C6C14 /* JASidePanelController+fakeSharedInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JASidePanelController+fakeSharedInstance.h"; sourceTree = "<group>"; };
+		843935B11C1B682B006C6C14 /* JASidePanelController+fakeSharedInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JASidePanelController+fakeSharedInstance.m"; sourceTree = "<group>"; };
 		844E48A81C1A2C990022250A /* SPFacebookUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPFacebookUser.h; sourceTree = "<group>"; };
 		844E48A91C1A2C990022250A /* SPFacebookUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPFacebookUser.m; sourceTree = "<group>"; };
 		844E48AB1C1A2CB70022250A /* SPFacebookUser+Converter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPFacebookUser+Converter.h"; sourceTree = "<group>"; };
@@ -122,6 +137,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8439357C1C1B602E006C6C14 /* Submodules */ = {
+			isa = PBXGroup;
+			children = (
+				8439357D1C1B602E006C6C14 /* JASidePanels */,
+			);
+			path = Submodules;
+			sourceTree = "<group>";
+		};
+		8439357D1C1B602E006C6C14 /* JASidePanels */ = {
+			isa = PBXGroup;
+			children = (
+				843935801C1B602E006C6C14 /* JASidePanels */,
+			);
+			path = JASidePanels;
+			sourceTree = "<group>";
+		};
+		843935801C1B602E006C6C14 /* JASidePanels */ = {
+			isa = PBXGroup;
+			children = (
+				843935911C1B602E006C6C14 /* Source */,
+			);
+			path = JASidePanels;
+			sourceTree = "<group>";
+		};
+		843935911C1B602E006C6C14 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				843935921C1B602E006C6C14 /* JASidePanelController.h */,
+				843935931C1B602E006C6C14 /* JASidePanelController.m */,
+				843935941C1B602E006C6C14 /* UIViewController+JASidePanel.h */,
+				843935951C1B602E006C6C14 /* UIViewController+JASidePanel.m */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 		844E48A71C1A2C850022250A /* SPFacebookUser */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +270,8 @@
 		846EBFFD1C178591004CD34E /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				843935B01C1B682B006C6C14 /* JASidePanelController+fakeSharedInstance.h */,
+				843935B11C1B682B006C6C14 /* JASidePanelController+fakeSharedInstance.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -247,6 +299,7 @@
 		846EC0001C178591004CD34E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8439357C1C1B602E006C6C14 /* Submodules */,
 				846EC01D1C1789CF004CD34E /* WithOutSourceCode */,
 			);
 			path = Frameworks;
@@ -321,6 +374,8 @@
 		846EC0151C17868E004CD34E /* SPSideMenuViewController */ = {
 			isa = PBXGroup;
 			children = (
+				843935AA1C1B6120006C6C14 /* SPSideMenuViewController.h */,
+				843935AB1C1B6120006C6C14 /* SPSideMenuViewController.m */,
 			);
 			path = SPSideMenuViewController;
 			sourceTree = "<group>";
@@ -335,6 +390,8 @@
 		846EC0181C178696004CD34E /* SPMapViewController */ = {
 			isa = PBXGroup;
 			children = (
+				843935AD1C1B6245006C6C14 /* SPMapViewController.h */,
+				843935AE1C1B6245006C6C14 /* SPMapViewController.m */,
 			);
 			path = SPMapViewController;
 			sourceTree = "<group>";
@@ -569,17 +626,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				843935AF1C1B6245006C6C14 /* SPMapViewController.m in Sources */,
 				846EC00F1C178591004CD34E /* main.m in Sources */,
 				845828871C1A272C00DF8568 /* SPUser+CoreDataProperties.m in Sources */,
 				844E48AA1C1A2C990022250A /* SPFacebookUser.m in Sources */,
 				845828891C1A272C00DF8568 /* SPPlace+CoreDataProperties.m in Sources */,
+				843935A51C1B602E006C6C14 /* UIViewController+JASidePanel.m in Sources */,
 				845828881C1A272C00DF8568 /* SPUser.m in Sources */,
 				846EC0101C178591004CD34E /* smartplaces.xcdatamodeld in Sources */,
 				846EC01C1C1786B7004CD34E /* SPLoginViewController.m in Sources */,
+				843935A41C1B602E006C6C14 /* JASidePanelController.m in Sources */,
 				8458288A1C1A272C00DF8568 /* SPPlace.m in Sources */,
 				844E48AD1C1A2CB70022250A /* SPFacebookUser+Converter.m in Sources */,
 				8458287E1C1A25CC00DF8568 /* SPUserManager.m in Sources */,
 				846EC00D1C178591004CD34E /* AppDelegate.m in Sources */,
+				843935B21C1B682B006C6C14 /* JASidePanelController+fakeSharedInstance.m in Sources */,
+				843935AC1C1B6120006C6C14 /* SPSideMenuViewController.m in Sources */,
 				8458288E1C1A276C00DF8568 /* SPCoreDataManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

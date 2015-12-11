@@ -13,6 +13,7 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @interface SPLoginViewController ()<FBSDKLoginButtonDelegate>
+@property (weak, nonatomic) IBOutlet FBSDKLoginButton *facebookLoginButton;
 
 @end
 
@@ -22,8 +23,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     SPFacebookUser *user = [SPUserManager getCurrentUser]   ; NSLog(@"%@",user);
+    if([SPUserManager getCurrentUser]) {
+        [self performSegueWithIdentifier:@"showMapView" sender:self];
+    }
+    else {
+        //TODO: add Animations
+        [self.facebookLoginButton setHidden:NO];
+    }
 }
-
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -51,6 +62,7 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
              {
                  SPFacebookUser *loggedUser = [SPFacebookUser userFromFacebookResponce:result];
                  [SPUserManager saveToKeyChainUser:loggedUser];
+                 [self performSegueWithIdentifier:@"showMapView" sender:self];
              }
              else
              {
