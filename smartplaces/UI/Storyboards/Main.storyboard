@@ -26,13 +26,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LbF-9t-GHS">
-                                                    <rect key="frame" x="16" y="0.0" width="121" height="121"/>
+                                                    <rect key="frame" x="16" y="30" width="81" height="81"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="LbF-9t-GHS" secondAttribute="height" multiplier="1:1" id="2Ol-xQ-uOb"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="huo-Km-YEG">
-                                                    <rect key="frame" x="151" y="50" width="86" height="21"/>
+                                                    <rect key="frame" x="111" y="60" width="86" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -40,8 +40,8 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="huo-Km-YEG" firstAttribute="leading" secondItem="LbF-9t-GHS" secondAttribute="trailing" constant="14" id="cFg-Cp-7ls"/>
-                                                <constraint firstItem="LbF-9t-GHS" firstAttribute="top" secondItem="5Ts-JZ-Cdl" secondAttribute="top" id="eEc-QM-tcc"/>
-                                                <constraint firstAttribute="bottom" secondItem="LbF-9t-GHS" secondAttribute="bottom" id="pto-5e-gPQ"/>
+                                                <constraint firstItem="LbF-9t-GHS" firstAttribute="top" secondItem="5Ts-JZ-Cdl" secondAttribute="top" constant="30" id="eEc-QM-tcc"/>
+                                                <constraint firstAttribute="bottom" secondItem="LbF-9t-GHS" secondAttribute="bottom" constant="10" id="pto-5e-gPQ"/>
                                                 <constraint firstItem="LbF-9t-GHS" firstAttribute="leading" secondItem="5Ts-JZ-Cdl" secondAttribute="leading" constant="16" id="x5S-pG-ukS"/>
                                                 <constraint firstItem="huo-Km-YEG" firstAttribute="centerY" secondItem="LbF-9t-GHS" secondAttribute="centerY" id="yYM-zY-Ore"/>
                                             </constraints>
@@ -206,6 +206,48 @@
             </objects>
             <point key="canvasLocation" x="243" y="299"/>
         </scene>
+        <!--Saved Places View Controller-->
+        <scene sceneID="hXt-1l-llW">
+            <objects>
+                <viewController storyboardIdentifier="SPSavedPlacesViewController" id="9L2-kj-Ixr" customClass="SPSavedPlacesViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FCY-kh-tw6"/>
+                        <viewControllerLayoutGuide type="bottom" id="3Sh-zS-b07"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Vf1-VD-dqI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8Je-Cx-lar">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8Je-Cx-lar" firstAttribute="leading" secondItem="Vf1-VD-dqI" secondAttribute="leading" id="QbU-MT-a6N"/>
+                            <constraint firstItem="3Sh-zS-b07" firstAttribute="top" secondItem="8Je-Cx-lar" secondAttribute="bottom" id="W8Y-1m-sP0"/>
+                            <constraint firstAttribute="bottom" secondItem="8Je-Cx-lar" secondAttribute="bottom" id="YNO-TF-Isd"/>
+                            <constraint firstItem="8Je-Cx-lar" firstAttribute="top" secondItem="Vf1-VD-dqI" secondAttribute="top" id="eiS-Ig-Pvz"/>
+                            <constraint firstItem="8Je-Cx-lar" firstAttribute="top" secondItem="FCY-kh-tw6" secondAttribute="bottom" id="eqV-6l-02W"/>
+                            <constraint firstAttribute="trailing" secondItem="8Je-Cx-lar" secondAttribute="trailing" id="glB-O1-uNl"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="eqV-6l-02W"/>
+                                <exclude reference="W8Y-1m-sP0"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="placesTableView" destination="8Je-Cx-lar" id="ffe-ve-sPE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8vi-Kw-Zv3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1096" y="-498"/>
+        </scene>
         <!--Smart Places-->
         <scene sceneID="69c-zZ-RXd">
             <objects>
@@ -234,6 +276,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
+                        <outlet property="mainMapView" destination="9Ta-sV-kAq" id="rPT-dc-8dI"/>
                         <segue destination="7ks-wB-UuV" kind="presentation" identifier="editLocation" modalPresentationStyle="fullScreen" id="tuj-ze-SMr"/>
                         <segue destination="7ks-wB-UuV" kind="presentation" identifier="addLocation" modalPresentationStyle="fullScreen" id="OyV-6C-Wd0"/>
                     </connections>

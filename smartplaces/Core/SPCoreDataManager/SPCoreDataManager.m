@@ -7,6 +7,8 @@
 //
 
 #import "SPCoreDataManager.h"
+#import "SPUserManager.h"
+
 @interface SPCoreDataManager()
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
@@ -127,16 +129,43 @@ static SPCoreDataManager *_sharedInstance = nil;
     return [NSEntityDescription insertNewObjectForEntityForName:entityName inManagedObjectContext:[self managedObjectContext]];
 }
 +(SPUser*)getCurrentUser {
-    //TODO: finish this method
-    return nil;
+    SPFacebookUser *currentUser = [SPUserManager getCurrentUser];
+    if(currentUser == nil) {
+        return nil;
+    }
+    
+    NSArray *fetchedObjects;
+    NSManagedObjectContext *context = [[SPCoreDataManager sharedInstance] managedObjectContext];
+    NSFetchRequest *fetch = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"SPUser"  inManagedObjectContext: context];
+    [fetch setEntity:entityDescription];
+    [fetch setPredicate:[NSPredicate predicateWithFormat:@"(ANY identifire == %@)",currentUser.identifire]];
+    NSError * error = nil;
+    fetchedObjects = [context executeFetchRequest:fetch error:&error];
+    
+    if([fetchedObjects count] != 0) {
+        return [fetchedObjects firstObject];
+    }
+    else {
+       SPUser *currentSPUser = [[SPCoreDataManager sharedInstance] newEntityForName:@"SPUser"];
+        currentSPUser.identifire = currentUser.identifire;
+        [[SPCoreDataManager sharedInstance] saveContext];
+        return currentSPUser;
+    }
+    
 }
 +(SPPlace*)newPlaceInstace {
-    return [[SPCoreDataManager sharedInstance] newEntityForName:@"SPPlace"];
+    SPPlace *newPlaceInstace = [[SPCoreDataManager sharedInstance] newEntityForName:@"SPPlace"];
+    newPlaceInstace.user = [SPCoreDataManager getCurrentUser];
+    return newPlaceInstace;
 }
 +(void)rollback {
     [[SPCoreDataManager sharedInstance].managedObjectContext rollback];
 }
 +(void)saveContext {
     [[SPCoreDataManager sharedInstance] saveContext];
+}
++(NSManagedObjectContext *)managedObjectContext {
+    return [SPCoreDataManager sharedInstance].managedObjectContext;
 }
 @end

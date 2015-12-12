@@ -15,4 +15,5 @@
 +(SPPlace*)newPlaceInstace;
 +(void)saveContext;
 +(void)rollback;
++(NSManagedObjectContext *)managedObjectContext;
 @end

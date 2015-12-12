@@ -2,7 +2,7 @@
 //  SPUser+CoreDataProperties.m
 //  smartplaces
 //
-//  Created by Admin on 12/10/15.
+//  Created by Admin on 12/12/15.
 //  Copyright © 2015 ihor. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu

@@ -9,10 +9,10 @@
     </entity>
     <entity name="SPUser" representedClassName="SPUser" syncable="YES">
         <attribute name="identifire" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="places" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SPPlace" inverseName="user" inverseEntity="SPPlace" syncable="YES"/>
+        <relationship name="places" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SPPlace" inverseName="user" inverseEntity="SPPlace" syncable="YES"/>
     </entity>
     <elements>
-        <element name="SPUser" positionX="-63" positionY="-18" width="128" height="75"/>
         <element name="SPPlace" positionX="-54" positionY="-9" width="128" height="120"/>
+        <element name="SPUser" positionX="-63" positionY="-18" width="128" height="75"/>
     </elements>
 </model>

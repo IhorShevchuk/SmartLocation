@@ -5,12 +5,15 @@
 //  Created by Admin on 12/11/15.
 //  Copyright © 2015 ihor. All rights reserved.
 //
+#import <MapKit/MapKit.h>
 
 #import "SPMapViewController.h"
+#import "SPPinAnnotation.h"
 #import "UINavigationBar+BackgroundColor.h"
 #import "TMFloatingButton.h"
-@interface SPMapViewController ()
-
+#import "SPCoreDataManager.h"
+@interface SPMapViewController ()<MKMapViewDelegate>
+@property (weak, nonatomic) IBOutlet MKMapView *mainMapView;
 @end
 
 @implementation SPMapViewController
@@ -22,10 +25,13 @@
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     [self setupNavigationBar];
     [self setupAddButton];
+    [self setupMap];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    NSSet *plases = [SPCoreDataManager getCurrentUser].places;
+    [self addPlacesToMap:plases];
 }
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -60,7 +66,23 @@
     
     [self.navigationController.navigationBar showWithColor:MainAppColor];
 }
-
+- (void)setupMap {
+    self.mainMapView.delegate = self;
+}
+- (void)addPlacesToMap:(NSSet*)places {
+    NSMutableArray *annotations = [[NSMutableArray alloc]initWithCapacity:places.count];
+    NSArray *annotationsToRemove = self.mainMapView.annotations;
+    for(SPPlace *place in places) {
+        CLLocationCoordinate2D coordinates;
+        coordinates.latitude = [place.lat doubleValue];
+        coordinates.longitude = [place.lon doubleValue];
+        SPPinAnnotation *annotationToAdd = [[SPPinAnnotation alloc]initWithCoordinate:coordinates andTitle:place.name andSubTitle:place.formattedAddres];
+        [annotations addObject:annotationToAdd];
+    }
+    
+    [self.mainMapView addAnnotations:annotations];
+    [self.mainMapView removeAnnotations:annotationsToRemove];
+}
 #pragma mark - Buttons Actions
 - (void)toggleSideMenu:(id)sender {
     [[JASidePanelController sharedInstance] toggleLeftPanel:self];
@@ -70,6 +92,23 @@
 }
 - (void)addNewPinAction:(id)sender {
     [self performSegueWithIdentifier:@"addLocation" sender:self];
+}
+#pragma mark - MKMapViewDelegate
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    static NSString *GeoPointAnnotationIdentifier = @"RedPin";
+    
+    MKPinAnnotationView *annotationView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:GeoPointAnnotationIdentifier];
+    
+    if (!annotationView)
+    {
+        annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:GeoPointAnnotationIdentifier];
+        annotationView.pinColor = MKPinAnnotationColorRed;
+        annotationView.canShowCallout = YES;
+        annotationView.draggable = NO;
+        annotationView.animatesDrop = YES;
+    }
+    
+    return annotationView;
 }
 /*
 #pragma mark - Navigation
