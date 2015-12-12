@@ -122,10 +122,19 @@ static SPCoreDataManager *_sharedInstance = nil;
         }
     }
 }
-
 #pragma mark - CoreData methods
+-(id)newEntityForName:(NSString *)entityName {
+    return [NSEntityDescription insertNewObjectForEntityForName:entityName inManagedObjectContext:[self managedObjectContext]];
+}
 +(SPUser*)getCurrentUser {
+    //TODO: finish this method
     return nil;
+}
++(SPPlace*)newPlaceInstace {
+    return [[SPCoreDataManager sharedInstance] newEntityForName:@"SPPlace"];
+}
++(void)rollback {
+    [[SPCoreDataManager sharedInstance].managedObjectContext rollback];
 }
 +(void)saveContext {
     [[SPCoreDataManager sharedInstance] saveContext];

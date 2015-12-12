@@ -16,6 +16,11 @@
 		843935B91C1B7031006C6C14 /* UIImage+ImageWithColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 843935B81C1B7031006C6C14 /* UIImage+ImageWithColor.m */; };
 		843935BC1C1B7192006C6C14 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843935BB1C1B7192006C6C14 /* MapKit.framework */; };
 		843935BF1C1B741B006C6C14 /* SPSideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843935BE1C1B741B006C6C14 /* SPSideMenuViewController.m */; };
+		843935C31C1C2989006C6C14 /* SPAddEditLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843935C21C1C2989006C6C14 /* SPAddEditLocationViewController.m */; };
+		843935F61C1C2B4F006C6C14 /* buttonImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 843935E11C1C2B4F006C6C14 /* buttonImages.xcassets */; };
+		843935F71C1C2B4F006C6C14 /* TMFloatingButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 843935E31C1C2B4F006C6C14 /* TMFloatingButton.m */; };
+		843936021C1C5D5A006C6C14 /* ELCTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 843936011C1C5D5A006C6C14 /* ELCTextFieldCell.m */; };
+		843936051C1C6EA3006C6C14 /* CLPlacemark+FormattedAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 843936041C1C6EA3006C6C14 /* CLPlacemark+FormattedAddress.m */; };
 		844E48AA1C1A2C990022250A /* SPFacebookUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 844E48A91C1A2C990022250A /* SPFacebookUser.m */; };
 		844E48AD1C1A2CB70022250A /* SPFacebookUser+Converter.m in Sources */ = {isa = PBXBuildFile; fileRef = 844E48AC1C1A2CB70022250A /* SPFacebookUser+Converter.m */; };
 		8458287E1C1A25CC00DF8568 /* SPUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8458287D1C1A25CC00DF8568 /* SPUserManager.m */; };
@@ -75,6 +80,15 @@
 		843935BB1C1B7192006C6C14 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		843935BD1C1B741B006C6C14 /* SPSideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSideMenuViewController.h; sourceTree = "<group>"; };
 		843935BE1C1B741B006C6C14 /* SPSideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPSideMenuViewController.m; sourceTree = "<group>"; };
+		843935C11C1C2989006C6C14 /* SPAddEditLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPAddEditLocationViewController.h; sourceTree = "<group>"; };
+		843935C21C1C2989006C6C14 /* SPAddEditLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPAddEditLocationViewController.m; sourceTree = "<group>"; };
+		843935E11C1C2B4F006C6C14 /* buttonImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = buttonImages.xcassets; sourceTree = "<group>"; };
+		843935E21C1C2B4F006C6C14 /* TMFloatingButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFloatingButton.h; sourceTree = "<group>"; };
+		843935E31C1C2B4F006C6C14 /* TMFloatingButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFloatingButton.m; sourceTree = "<group>"; };
+		843936001C1C5D5A006C6C14 /* ELCTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCTextFieldCell.h; sourceTree = "<group>"; };
+		843936011C1C5D5A006C6C14 /* ELCTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCTextFieldCell.m; sourceTree = "<group>"; };
+		843936031C1C6EA3006C6C14 /* CLPlacemark+FormattedAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLPlacemark+FormattedAddress.h"; sourceTree = "<group>"; };
+		843936041C1C6EA3006C6C14 /* CLPlacemark+FormattedAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLPlacemark+FormattedAddress.m"; sourceTree = "<group>"; };
 		844E48A81C1A2C990022250A /* SPFacebookUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPFacebookUser.h; sourceTree = "<group>"; };
 		844E48A91C1A2C990022250A /* SPFacebookUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPFacebookUser.m; sourceTree = "<group>"; };
 		844E48AB1C1A2CB70022250A /* SPFacebookUser+Converter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPFacebookUser+Converter.h"; sourceTree = "<group>"; };
@@ -158,6 +172,7 @@
 		8439357C1C1B602E006C6C14 /* Submodules */ = {
 			isa = PBXGroup;
 			children = (
+				843935C41C1C2B4F006C6C14 /* TMFloatingButton */,
 				8439357D1C1B602E006C6C14 /* JASidePanels */,
 			);
 			path = Submodules;
@@ -196,6 +211,50 @@
 				843935BB1C1B7192006C6C14 /* MapKit.framework */,
 			);
 			name = System;
+			sourceTree = "<group>";
+		};
+		843935C01C1C2945006C6C14 /* SPAddEditLocationViewController */ = {
+			isa = PBXGroup;
+			children = (
+				843935C11C1C2989006C6C14 /* SPAddEditLocationViewController.h */,
+				843935C21C1C2989006C6C14 /* SPAddEditLocationViewController.m */,
+			);
+			path = SPAddEditLocationViewController;
+			sourceTree = "<group>";
+		};
+		843935C41C1C2B4F006C6C14 /* TMFloatingButton */ = {
+			isa = PBXGroup;
+			children = (
+				843935E01C1C2B4F006C6C14 /* TMFloatingButton */,
+			);
+			path = TMFloatingButton;
+			sourceTree = "<group>";
+		};
+		843935E01C1C2B4F006C6C14 /* TMFloatingButton */ = {
+			isa = PBXGroup;
+			children = (
+				843935E11C1C2B4F006C6C14 /* buttonImages.xcassets */,
+				843935E21C1C2B4F006C6C14 /* TMFloatingButton.h */,
+				843935E31C1C2B4F006C6C14 /* TMFloatingButton.m */,
+			);
+			path = TMFloatingButton;
+			sourceTree = "<group>";
+		};
+		843935FE1C1C5D5A006C6C14 /* WithSourceCode */ = {
+			isa = PBXGroup;
+			children = (
+				843935FF1C1C5D5A006C6C14 /* ELCTextFieldCell */,
+			);
+			path = WithSourceCode;
+			sourceTree = "<group>";
+		};
+		843935FF1C1C5D5A006C6C14 /* ELCTextFieldCell */ = {
+			isa = PBXGroup;
+			children = (
+				843936001C1C5D5A006C6C14 /* ELCTextFieldCell.h */,
+				843936011C1C5D5A006C6C14 /* ELCTextFieldCell.m */,
+			);
+			path = ELCTextFieldCell;
 			sourceTree = "<group>";
 		};
 		844E48A71C1A2C850022250A /* SPFacebookUser */ = {
@@ -297,12 +356,14 @@
 		846EBFFD1C178591004CD34E /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				843936031C1C6EA3006C6C14 /* CLPlacemark+FormattedAddress.h */,
+				843936041C1C6EA3006C6C14 /* CLPlacemark+FormattedAddress.m */,
 				843935B01C1B682B006C6C14 /* JASidePanelController+fakeSharedInstance.h */,
 				843935B11C1B682B006C6C14 /* JASidePanelController+fakeSharedInstance.m */,
-				843935B41C1B6FDF006C6C14 /* UINavigationBar+BackgroundColor.h */,
-				843935B51C1B6FDF006C6C14 /* UINavigationBar+BackgroundColor.m */,
 				843935B71C1B7031006C6C14 /* UIImage+ImageWithColor.h */,
 				843935B81C1B7031006C6C14 /* UIImage+ImageWithColor.m */,
+				843935B41C1B6FDF006C6C14 /* UINavigationBar+BackgroundColor.h */,
+				843935B51C1B6FDF006C6C14 /* UINavigationBar+BackgroundColor.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -310,6 +371,7 @@
 		846EBFFE1C178591004CD34E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				843935C01C1C2945006C6C14 /* SPAddEditLocationViewController */,
 				846EC0191C178696004CD34E /* SPLoginViewController */,
 				846EC0181C178696004CD34E /* SPMapViewController */,
 				846EC0171C178696004CD34E /* SPSavedPlacesViewController */,
@@ -330,6 +392,7 @@
 		846EC0001C178591004CD34E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				843935FE1C1C5D5A006C6C14 /* WithSourceCode */,
 				843935BA1C1B7177006C6C14 /* System */,
 				8439357C1C1B602E006C6C14 /* Submodules */,
 				846EC01D1C1789CF004CD34E /* WithOutSourceCode */,
@@ -576,6 +639,7 @@
 				846EC0281C178AA4004CD34E /* LICENSE.txt in Resources */,
 				846EC0121C178591004CD34E /* LaunchScreen.storyboard in Resources */,
 				846EC0241C178AA4004CD34E /* FacebookSDKStrings.bundle in Resources */,
+				843935F61C1C2B4F006C6C14 /* buttonImages.xcassets in Resources */,
 				846EC0111C178591004CD34E /* Assets.xcassets in Resources */,
 				846EC0131C178591004CD34E /* Main.storyboard in Resources */,
 			);
@@ -652,10 +716,12 @@
 			files = (
 				843935AF1C1B6245006C6C14 /* SPMapViewController.m in Sources */,
 				846EC00F1C178591004CD34E /* main.m in Sources */,
+				843935F71C1C2B4F006C6C14 /* TMFloatingButton.m in Sources */,
 				845828871C1A272C00DF8568 /* SPUser+CoreDataProperties.m in Sources */,
 				843935BF1C1B741B006C6C14 /* SPSideMenuViewController.m in Sources */,
 				844E48AA1C1A2C990022250A /* SPFacebookUser.m in Sources */,
 				845828891C1A272C00DF8568 /* SPPlace+CoreDataProperties.m in Sources */,
+				843935C31C1C2989006C6C14 /* SPAddEditLocationViewController.m in Sources */,
 				843935B91C1B7031006C6C14 /* UIImage+ImageWithColor.m in Sources */,
 				843935A51C1B602E006C6C14 /* UIViewController+JASidePanel.m in Sources */,
 				845828881C1A272C00DF8568 /* SPUser.m in Sources */,
@@ -664,8 +730,10 @@
 				843935A41C1B602E006C6C14 /* JASidePanelController.m in Sources */,
 				8458288A1C1A272C00DF8568 /* SPPlace.m in Sources */,
 				844E48AD1C1A2CB70022250A /* SPFacebookUser+Converter.m in Sources */,
+				843936021C1C5D5A006C6C14 /* ELCTextFieldCell.m in Sources */,
 				8458287E1C1A25CC00DF8568 /* SPUserManager.m in Sources */,
 				846EC00D1C178591004CD34E /* AppDelegate.m in Sources */,
+				843936051C1C6EA3006C6C14 /* CLPlacemark+FormattedAddress.m in Sources */,
 				843935B21C1B682B006C6C14 /* JASidePanelController+fakeSharedInstance.m in Sources */,
 				843935B61C1B6FDF006C6C14 /* UINavigationBar+BackgroundColor.m in Sources */,
 				8458288E1C1A276C00DF8568 /* SPCoreDataManager.m in Sources */,

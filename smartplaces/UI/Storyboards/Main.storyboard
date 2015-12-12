@@ -209,17 +209,17 @@
         <!--Smart Places-->
         <scene sceneID="69c-zZ-RXd">
             <objects>
-                <viewController storyboardIdentifier="SPMapViewController" title="Smart Places" id="Wbs-5U-fXl" customClass="SPMapViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SPMapViewController" title="Smart Places" automaticallyAdjustsScrollViewInsets="NO" id="Wbs-5U-fXl" customClass="SPMapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0dU-s6-rCe"/>
                         <viewControllerLayoutGuide type="bottom" id="SUR-qg-lyF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ANY-6L-w1S">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9Ta-sV-kAq">
-                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -230,12 +230,75 @@
                             <constraint firstItem="9Ta-sV-kAq" firstAttribute="top" secondItem="0dU-s6-rCe" secondAttribute="bottom" id="bvh-hj-fOU"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <segue destination="7ks-wB-UuV" kind="presentation" identifier="editLocation" modalPresentationStyle="fullScreen" id="tuj-ze-SMr"/>
+                        <segue destination="7ks-wB-UuV" kind="presentation" identifier="addLocation" modalPresentationStyle="fullScreen" id="OyV-6C-Wd0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mfq-XJ-6Z3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="995" y="299"/>
+        </scene>
+        <!--Add Edit Location View Controller-->
+        <scene sceneID="4IF-kq-oY9">
+            <objects>
+                <viewController id="7ks-wB-UuV" customClass="SPAddEditLocationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ufa-tG-CjE"/>
+                        <viewControllerLayoutGuide type="bottom" id="u4O-EH-liQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zpx-Kt-Chb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pzH-5g-dBT">
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="17L-zC-DZ0">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="kcc-Lj-AFk"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Title" id="99L-xT-4Ap">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ZeD-uk-kBT">
+                                            <connections>
+                                                <action selector="cancelButtonAction:" destination="7ks-wB-UuV" id="f7O-6s-rer"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="7QA-6Y-mWb">
+                                            <connections>
+                                                <action selector="doneButtonAction:" destination="7ks-wB-UuV" id="6Ya-Ok-VxS"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pzH-5g-dBT" firstAttribute="top" secondItem="17L-zC-DZ0" secondAttribute="bottom" id="4U6-oj-kHN"/>
+                            <constraint firstItem="17L-zC-DZ0" firstAttribute="top" secondItem="zpx-Kt-Chb" secondAttribute="top" id="5Po-Vi-SzR"/>
+                            <constraint firstAttribute="trailing" secondItem="pzH-5g-dBT" secondAttribute="trailing" id="A36-dr-Swa"/>
+                            <constraint firstItem="pzH-5g-dBT" firstAttribute="leading" secondItem="zpx-Kt-Chb" secondAttribute="leading" id="HFE-16-efZ"/>
+                            <constraint firstAttribute="trailing" secondItem="17L-zC-DZ0" secondAttribute="trailing" id="lB4-vu-xML"/>
+                            <constraint firstItem="u4O-EH-liQ" firstAttribute="top" secondItem="pzH-5g-dBT" secondAttribute="bottom" id="rL3-9z-gHz"/>
+                            <constraint firstItem="17L-zC-DZ0" firstAttribute="leading" secondItem="zpx-Kt-Chb" secondAttribute="leading" id="v0z-cI-Zwl"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="navigationBar" destination="17L-zC-DZ0" id="nla-R2-25Z"/>
+                        <outlet property="showingMainTableView" destination="pzH-5g-dBT" id="zpX-ux-Tv8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0A0-Pv-B0F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1540" y="232"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uEk-te-j9k">
@@ -258,4 +321,7 @@
     <resources>
         <image name="mapWithPin" width="300" height="130"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="OyV-6C-Wd0"/>
+    </inferredMetricsTieBreakers>
 </document>

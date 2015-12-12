@@ -1,3 +1,6 @@
 [submodule "smartplaces/Frameworks/Submodules/JASidePanels"]
 	path = smartplaces/Frameworks/Submodules/JASidePanels
 	url = https://github.com/gotosleep/JASidePanels.git
+[submodule "smartplaces/Frameworks/Submodules/TMFloatingButton"]
+	path = smartplaces/Frameworks/Submodules/TMFloatingButton
+	url = https://github.com/IhorShevchuk/TMFloatingButton.git

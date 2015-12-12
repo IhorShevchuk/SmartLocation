@@ -12,5 +12,7 @@
 
 @interface SPCoreDataManager : NSObject
 +(SPUser*)getCurrentUser;
++(SPPlace*)newPlaceInstace;
 +(void)saveContext;
++(void)rollback;
 @end

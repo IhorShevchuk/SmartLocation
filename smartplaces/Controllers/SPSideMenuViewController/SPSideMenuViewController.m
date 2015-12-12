@@ -54,6 +54,9 @@
 }
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+   // UITableViewCell *cell =[tableView cellForRowAtIndexPath:indexPath];
+   // [cell setSelected:NO animated:YES];
     switch (indexPath.row) {
         case 1:
         

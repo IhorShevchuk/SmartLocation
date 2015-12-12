@@ -8,18 +8,20 @@
 
 #import "SPMapViewController.h"
 #import "UINavigationBar+BackgroundColor.h"
-
+#import "TMFloatingButton.h"
 @interface SPMapViewController ()
 
 @end
 
 @implementation SPMapViewController
-
+//TODO: add internet conection check
 #pragma mark - Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
     [self setupNavigationBar];
+    [self setupAddButton];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -27,13 +29,26 @@
 }
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [self.navigationController setNavigationBarHidden:NO animated:animated];
+
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqualToString:@"editLocation"]|| [segue.identifier isEqualToString:@"addLocation"]) {
+        
+        if([segue.identifier isEqualToString:@"editLocation"]) {
+            //TODO: add edited location
+        }
+    }
+}
 #pragma mark - UI
+- (void)setupAddButton {
+    TMFloatingButton *addButton = [[TMFloatingButton alloc]initWithSuperView:self.view];
+    [addButton addStateWithText:@"add" withAttributes:@{} andBackgroundColor:MainAppColor forName:@"add" applyRightNow:YES];
+    [addButton addTarget:self action:@selector(addNewPinAction:) forControlEvents:UIControlEventTouchUpInside];
+}
 - (void)setupNavigationBar {
 
     UIBarButtonItem *menuButton = [[UIBarButtonItem alloc]initWithImage:[JASidePanelController defaultImage] style:UIBarButtonItemStylePlain target:self action:@selector(toggleSideMenu:)];
@@ -52,6 +67,9 @@
 }
 - (void)goToMyLocation:(id)sender {
     
+}
+- (void)addNewPinAction:(id)sender {
+    [self performSegueWithIdentifier:@"addLocation" sender:self];
 }
 /*
 #pragma mark - Navigation
