@@ -13,6 +13,9 @@
 
 #import "UINavigationBar+BackgroundColor.h"
 #import "CLPlacemark+FormattedAddress.h"
+#import "SPPlace+Coordinates.h"
+#import "CLGeocoder+formattedAddress.h"
+
 
 @interface SPAddEditLocationViewController () <UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate, ELCTextFieldDelegate>
 @property(nonatomic, strong) MKMapView *mapToSelect;
@@ -37,7 +40,17 @@
 - (void)setupMap {
     self.mapToSelect = [[MKMapView alloc] init];
     self.mapToSelect.delegate = self;
-    [self.mapToSelect setCenterCoordinate:self.mapToSelect.userLocation.location.coordinate animated:YES];
+    if(!self.place) {
+        [self.mapToSelect setCenterCoordinate:self.mapToSelect.userLocation.location.coordinate animated:YES];
+    } else {
+        MKPointAnnotation *annotationPoint = [[MKPointAnnotation alloc] init];
+        annotationPoint.coordinate = self.place.coordinates;
+        annotationPoint.title = self.place.name;
+        annotationPoint.subtitle = self.place.formattedAddres;
+        self.annotationToShowPlace = [[MKPinAnnotationView alloc] initWithAnnotation:annotationPoint reuseIdentifier:nil];
+        self.annotationToShowPlace.draggable = YES;
+        [self.mapToSelect addAnnotation:self.annotationToShowPlace.annotation];
+    }
     self.mapToSelect.showsUserLocation = YES;
     
     CGRect rect = CGRectMake(0, 0, self.view.frame.size.width, 400);
@@ -183,6 +196,8 @@
                                  [selfWeak.mapToSelect removeAnnotation:selfWeak.annotationToShowPlace.annotation];
                                  selfWeak.annotationToShowPlace = [[MKPinAnnotationView alloc] initWithAnnotation:annotationPoint reuseIdentifier:nil];
                                  selfWeak.annotationToShowPlace.draggable = YES;
+                                 
+                                 [selfWeak.mapToSelect removeAnnotation:selfWeak.annotationToShowPlace.annotation];
                                  [selfWeak.mapToSelect addAnnotation:selfWeak.annotationToShowPlace.annotation];
                              }
                          }
@@ -200,29 +215,12 @@
     [cell setSelected:NO];
     [tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
 }
-- (void)textFieldDidEndEditing:(UITextField *)textField
-{
-    //    switch (textField.tag)
-    //    {
-    //        case 0:
-    //            newLoc.name_ = textField.text;
-    //            break;
-    //        case 1:
-    //        {
-    //            newLoc.address_ = textField.text;
-    //            break;
-    //        }
-    //        case 2:
-    //            newLoc.notes_ = textField.text;
-    //            break;
-    //
-    //        default:
-    //            break;
-    //    }
-}
 #pragma mark -map view
 - (void)mapView:(MKMapView *)aMapView didUpdateUserLocation:(MKUserLocation *)aUserLocation
 {
+    if(self.annotationToShowPlace != nil) {
+        return;
+    }
     MKCoordinateRegion region;
     MKCoordinateSpan span;
     span.latitudeDelta = 0.005;
@@ -238,47 +236,51 @@
     annotationPoint.coordinate = location;
     
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-    CLLocation *location1 = [[CLLocation alloc] initWithLatitude:location.latitude longitude:location.longitude];
-    [geocoder reverseGeocodeLocation:location1 completionHandler:^(NSArray *placemarks, NSError *error)
-     {
-         if (placemarks && placemarks.count > 0)
-         {
-             CLPlacemark *placemark = [placemarks objectAtIndex:0];
-             NSUInteger count = [[placemark.addressDictionary valueForKey:@"FormattedAddressLines"] count];
-             
-             
-             annotationPoint.title = [[placemark.addressDictionary valueForKey:@"FormattedAddressLines"] objectAtIndex:0];
-             annotationPoint.subtitle = placemark.country;
-             if(count > 2) {
-                 annotationPoint.subtitle = placemark.locality;
-             }
-             
-             self.place.lon = [NSNumber numberWithFloat:placemark.location.coordinate.longitude];
-             self.place.lat = [NSNumber numberWithFloat:placemark.location.coordinate.latitude];
-             self.place.formattedAddres = [placemark address];
-//             [self.showingMainTableView reloadData];
-         }
-     }];
-    
+    CLLocation *clLocation = [[CLLocation alloc] initWithLatitude:location.latitude longitude:location.longitude];
     self.annotationToShowPlace = [[MKPinAnnotationView alloc] initWithAnnotation:annotationPoint reuseIdentifier:nil];
+    __weak SPAddEditLocationViewController *selfWeak = self;
+    [geocoder reverseGeocodeWithFormatedAddressLocation:clLocation completionHandler:^(NSString *formattedAddres,CLLocationCoordinate2D coordinates,NSError *error){
+        selfWeak.place.lon = [NSNumber numberWithFloat:coordinates.longitude];
+        selfWeak.place.lat = [NSNumber numberWithFloat:coordinates.latitude];
+        selfWeak.place.formattedAddres = formattedAddres;
+        
+        MKPointAnnotation *annotationPoint;
+        annotationPoint = selfWeak.annotationToShowPlace.annotation;
+        annotationPoint.title = selfWeak.place.name;
+        annotationPoint.subtitle = formattedAddres;
+    }];
+    
     self.annotationToShowPlace.draggable = YES;
     [self.mapToSelect addAnnotation:self.annotationToShowPlace.annotation];
 }
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    if (annotation == mapView.userLocation) {
+
+        return nil;
+    }
     static NSString *GeoPointAnnotationIdentifier = @"RedPin";
     
+    return self.annotationToShowPlace;
     MKPinAnnotationView *annotationView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:GeoPointAnnotationIdentifier];
     
-    if (!annotationView)
-    {
+//    if (!annotationView)
+//    {
         annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:GeoPointAnnotationIdentifier];
         annotationView.pinColor = MKPinAnnotationColorRed;
         annotationView.canShowCallout = YES;
         annotationView.draggable = YES;
         annotationView.animatesDrop = YES;
-    }
+//    }
     
     return annotationView;
+}
+- (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray<MKAnnotationView *> *)views {
+    for(MKAnnotationView *annotationView in views) {
+        if([annotationView.annotation isEqual:mapView.userLocation]) {
+            [annotationView setEnabled:![annotationView.annotation isEqual:mapView.userLocation]];
+            [annotationView.superview sendSubviewToBack:annotationView];
+        }
+    }
 }
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
 {
@@ -298,28 +300,20 @@
 
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view didChangeDragState:(MKAnnotationViewDragState)newState
-   fromOldState:(MKAnnotationViewDragState)oldState
-{
+   fromOldState:(MKAnnotationViewDragState)oldState {
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
     CLLocation *location = [[CLLocation alloc] initWithLatitude:view.annotation.coordinate.latitude longitude:view.annotation.coordinate.longitude];
-    [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error)
-     {
-         if (placemarks && placemarks.count > 0)
-         {
-             CLPlacemark *placemark = [placemarks objectAtIndex:0];
-             NSUInteger count = [[placemark.addressDictionary valueForKey:@"FormattedAddressLines"] count];
-             MKPointAnnotation *annotationPoint;             annotationPoint = view.annotation;
-             annotationPoint.title = [[placemark.addressDictionary valueForKey:@"FormattedAddressLines"] objectAtIndex:0];
-             annotationPoint.subtitle = placemark.country;
-             if(count > 2) {
-                 annotationPoint.subtitle = placemark.locality;
-             }
-             self.place.lon = [NSNumber numberWithFloat:placemark.location.coordinate.longitude];
-             self.place.lat = [NSNumber numberWithFloat:placemark.location.coordinate.latitude];
-             self.place.formattedAddres = [placemark address];
-             //  [self.addLocTableView reloadData];
-         }
-     }];
+    __weak SPAddEditLocationViewController *selfWeak = self;
+    [geocoder reverseGeocodeWithFormatedAddressLocation:location completionHandler:^(NSString *formattedAddres,CLLocationCoordinate2D coordinates,NSError *error){
+        selfWeak.place.lon = [NSNumber numberWithFloat:coordinates.longitude];
+        selfWeak.place.lat = [NSNumber numberWithFloat:coordinates.latitude];
+        selfWeak.place.formattedAddres = formattedAddres;
+        
+        MKPointAnnotation *annotationPoint;
+        annotationPoint = view.annotation;
+        annotationPoint.title = selfWeak.place.name;
+        annotationPoint.subtitle = formattedAddres;
+    }];
     self.addressCell.rightTextField.text = self.place.formattedAddres;
 }
 #pragma mark - Buttons Actions
@@ -349,7 +343,15 @@
         [alert show];
         return;
     }
-    [SPCoreDataManager saveContext];
-    [self dismissViewControllerAnimated:YES completion:^{}];
+    
+    CLLocation *clLocation = [[CLLocation alloc] initWithLatitude:[self.place.lat doubleValue] longitude:[self.place.lon doubleValue]];
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    __weak SPAddEditLocationViewController *selfWeak = self;
+    [geocoder reverseGeocodeWithFormatedAddressLocation:clLocation completionHandler:^(NSString *formattedAddres,CLLocationCoordinate2D coordinates,NSError *error){
+        selfWeak.place.formattedAddres = formattedAddres;
+        [SPCoreDataManager saveContext];
+        [selfWeak dismissViewControllerAnimated:YES completion:^{}];
+    }];
+    
 }
 @end

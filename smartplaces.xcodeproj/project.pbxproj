@@ -25,6 +25,11 @@
 		8439360C1C1C9867006C6C14 /* SPSavedPlacesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8439360B1C1C9867006C6C14 /* SPSavedPlacesViewController.m */; };
 		843936111C1C9995006C6C14 /* SPPlaceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 843936101C1C9995006C6C14 /* SPPlaceTableViewCell.m */; };
 		843936131C1C99AD006C6C14 /* SPPlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843936121C1C99AD006C6C14 /* SPPlaceTableViewCell.xib */; };
+		843936161C1CAC67006C6C14 /* SPPlace+Coordinates.m in Sources */ = {isa = PBXBuildFile; fileRef = 843936151C1CAC67006C6C14 /* SPPlace+Coordinates.m */; };
+		8439361A1C1CAF45006C6C14 /* CLGeocoder+formattedAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 843936191C1CAF45006C6C14 /* CLGeocoder+formattedAddress.m */; };
+		8439361D1C1CB41B006C6C14 /* SPFindMyLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8439361C1C1CB41B006C6C14 /* SPFindMyLocation.m */; };
+		843936201C1CB933006C6C14 /* CLLocationManager+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 8439361F1C1CB933006C6C14 /* CLLocationManager+Category.m */; };
+		843936231C1CB9A2006C6C14 /* UIViewController+topViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843936221C1CB9A2006C6C14 /* UIViewController+topViewController.m */; };
 		844E48AA1C1A2C990022250A /* SPFacebookUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 844E48A91C1A2C990022250A /* SPFacebookUser.m */; };
 		844E48AD1C1A2CB70022250A /* SPFacebookUser+Converter.m in Sources */ = {isa = PBXBuildFile; fileRef = 844E48AC1C1A2CB70022250A /* SPFacebookUser+Converter.m */; };
 		8458287E1C1A25CC00DF8568 /* SPUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8458287D1C1A25CC00DF8568 /* SPUserManager.m */; };
@@ -100,6 +105,16 @@
 		8439360F1C1C9995006C6C14 /* SPPlaceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPPlaceTableViewCell.h; sourceTree = "<group>"; };
 		843936101C1C9995006C6C14 /* SPPlaceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPPlaceTableViewCell.m; sourceTree = "<group>"; };
 		843936121C1C99AD006C6C14 /* SPPlaceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPPlaceTableViewCell.xib; sourceTree = "<group>"; };
+		843936141C1CAC67006C6C14 /* SPPlace+Coordinates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPPlace+Coordinates.h"; sourceTree = "<group>"; };
+		843936151C1CAC67006C6C14 /* SPPlace+Coordinates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPPlace+Coordinates.m"; sourceTree = "<group>"; };
+		843936181C1CAF45006C6C14 /* CLGeocoder+formattedAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLGeocoder+formattedAddress.h"; sourceTree = "<group>"; };
+		843936191C1CAF45006C6C14 /* CLGeocoder+formattedAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLGeocoder+formattedAddress.m"; sourceTree = "<group>"; };
+		8439361B1C1CB41B006C6C14 /* SPFindMyLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPFindMyLocation.h; sourceTree = "<group>"; };
+		8439361C1C1CB41B006C6C14 /* SPFindMyLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPFindMyLocation.m; sourceTree = "<group>"; };
+		8439361E1C1CB933006C6C14 /* CLLocationManager+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocationManager+Category.h"; sourceTree = "<group>"; };
+		8439361F1C1CB933006C6C14 /* CLLocationManager+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocationManager+Category.m"; sourceTree = "<group>"; };
+		843936211C1CB9A2006C6C14 /* UIViewController+topViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+topViewController.h"; sourceTree = "<group>"; };
+		843936221C1CB9A2006C6C14 /* UIViewController+topViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+topViewController.m"; sourceTree = "<group>"; };
 		844E48A81C1A2C990022250A /* SPFacebookUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPFacebookUser.h; sourceTree = "<group>"; };
 		844E48A91C1A2C990022250A /* SPFacebookUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPFacebookUser.m; sourceTree = "<group>"; };
 		844E48AB1C1A2CB70022250A /* SPFacebookUser+Converter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPFacebookUser+Converter.h"; sourceTree = "<group>"; };
@@ -295,6 +310,15 @@
 			path = SPPlaceTableViewCell;
 			sourceTree = "<group>";
 		};
+		843936171C1CAE8A006C6C14 /* SPFindMyLocation */ = {
+			isa = PBXGroup;
+			children = (
+				8439361B1C1CB41B006C6C14 /* SPFindMyLocation.h */,
+				8439361C1C1CB41B006C6C14 /* SPFindMyLocation.m */,
+			);
+			path = SPFindMyLocation;
+			sourceTree = "<group>";
+		};
 		844E48A71C1A2C850022250A /* SPFacebookUser */ = {
 			isa = PBXGroup;
 			children = (
@@ -394,6 +418,10 @@
 		846EBFFD1C178591004CD34E /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				8439361E1C1CB933006C6C14 /* CLLocationManager+Category.h */,
+				843936211C1CB9A2006C6C14 /* UIViewController+topViewController.h */,
+				843936221C1CB9A2006C6C14 /* UIViewController+topViewController.m */,
+				8439361F1C1CB933006C6C14 /* CLLocationManager+Category.m */,
 				843936031C1C6EA3006C6C14 /* CLPlacemark+FormattedAddress.h */,
 				843936041C1C6EA3006C6C14 /* CLPlacemark+FormattedAddress.m */,
 				843935B01C1B682B006C6C14 /* JASidePanelController+fakeSharedInstance.h */,
@@ -402,6 +430,10 @@
 				843935B81C1B7031006C6C14 /* UIImage+ImageWithColor.m */,
 				843935B41C1B6FDF006C6C14 /* UINavigationBar+BackgroundColor.h */,
 				843935B51C1B6FDF006C6C14 /* UINavigationBar+BackgroundColor.m */,
+				843936141C1CAC67006C6C14 /* SPPlace+Coordinates.h */,
+				843936151C1CAC67006C6C14 /* SPPlace+Coordinates.m */,
+				843936181C1CAF45006C6C14 /* CLGeocoder+formattedAddress.h */,
+				843936191C1CAF45006C6C14 /* CLGeocoder+formattedAddress.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -421,6 +453,7 @@
 		846EBFFF1C178591004CD34E /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				843936171C1CAE8A006C6C14 /* SPFindMyLocation */,
 				8458288B1C1A275800DF8568 /* SPCoreDataManager */,
 				8458287B1C1A259100DF8568 /* SPUserManager */,
 			);
@@ -759,10 +792,13 @@
 			files = (
 				843935AF1C1B6245006C6C14 /* SPMapViewController.m in Sources */,
 				846EC00F1C178591004CD34E /* main.m in Sources */,
+				843936161C1CAC67006C6C14 /* SPPlace+Coordinates.m in Sources */,
 				843935F71C1C2B4F006C6C14 /* TMFloatingButton.m in Sources */,
 				845828871C1A272C00DF8568 /* SPUser+CoreDataProperties.m in Sources */,
 				843935BF1C1B741B006C6C14 /* SPSideMenuViewController.m in Sources */,
+				8439361A1C1CAF45006C6C14 /* CLGeocoder+formattedAddress.m in Sources */,
 				844E48AA1C1A2C990022250A /* SPFacebookUser.m in Sources */,
+				8439361D1C1CB41B006C6C14 /* SPFindMyLocation.m in Sources */,
 				845828891C1A272C00DF8568 /* SPPlace+CoreDataProperties.m in Sources */,
 				843935C31C1C2989006C6C14 /* SPAddEditLocationViewController.m in Sources */,
 				843935B91C1B7031006C6C14 /* UIImage+ImageWithColor.m in Sources */,
@@ -775,6 +811,7 @@
 				8458288A1C1A272C00DF8568 /* SPPlace.m in Sources */,
 				844E48AD1C1A2CB70022250A /* SPFacebookUser+Converter.m in Sources */,
 				843936021C1C5D5A006C6C14 /* ELCTextFieldCell.m in Sources */,
+				843936201C1CB933006C6C14 /* CLLocationManager+Category.m in Sources */,
 				843936091C1C77FF006C6C14 /* SPPinAnnotation.m in Sources */,
 				8458287E1C1A25CC00DF8568 /* SPUserManager.m in Sources */,
 				843936111C1C9995006C6C14 /* SPPlaceTableViewCell.m in Sources */,
@@ -782,6 +819,7 @@
 				843936051C1C6EA3006C6C14 /* CLPlacemark+FormattedAddress.m in Sources */,
 				843935B21C1B682B006C6C14 /* JASidePanelController+fakeSharedInstance.m in Sources */,
 				843935B61C1B6FDF006C6C14 /* UINavigationBar+BackgroundColor.m in Sources */,
+				843936231C1CB9A2006C6C14 /* UIViewController+topViewController.m in Sources */,
 				8458288E1C1A276C00DF8568 /* SPCoreDataManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

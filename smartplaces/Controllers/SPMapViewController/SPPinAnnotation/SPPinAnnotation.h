@@ -9,10 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 
+#import "SPPlace.h"
+
 @interface SPPinAnnotation : NSObject<MKAnnotation>
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
 @property (nonatomic, readonly, copy, nullable) NSString *title;
 @property (nonatomic, readonly, copy, nullable) NSString *subtitle;
+@property (nonatomic, readonly, strong) SPPlace *place;
 // add an init method so you can set the coordinate property on startup
-- (id) initWithCoordinate:(CLLocationCoordinate2D)coord andTitle:(nullable NSString *)title andSubTitle:(nullable NSString *)subTitle;
+- (id) initWithPlace:(SPPlace *)place;
 @end

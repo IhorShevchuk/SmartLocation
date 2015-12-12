@@ -26,7 +26,8 @@ static SPCoreDataManager *_sharedInstance = nil;
     static dispatch_once_t onceToken;
     
     dispatch_once(&onceToken, ^{
-        _sharedInstance = [[SPCoreDataManager alloc] init];        });
+        _sharedInstance = [[SPCoreDataManager alloc] init];
+    });
     
     return _sharedInstance;
 }

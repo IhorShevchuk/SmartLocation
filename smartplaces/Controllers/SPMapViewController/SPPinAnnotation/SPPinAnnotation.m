@@ -7,15 +7,20 @@
 //
 
 #import "SPPinAnnotation.h"
+@interface SPPinAnnotation()
 
+@end
 @implementation SPPinAnnotation
-- (id) initWithCoordinate:(CLLocationCoordinate2D)coord andTitle:(nullable NSString *)title andSubTitle:(nullable NSString *)subTitle
+- (id) initWithPlace:(SPPlace *)place
 {
     self = [super init];
     if(self) {
-        _coordinate = coord;
-        _title = title;
-        _subtitle = subTitle;
+        
+        _coordinate.latitude = [place.lat doubleValue];
+        _coordinate.longitude = [place.lon doubleValue];
+        _title = place.name;
+        _subtitle = place.formattedAddres;
+        _place = place;
     }
     return self;
 }

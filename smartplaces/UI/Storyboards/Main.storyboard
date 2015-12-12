@@ -242,6 +242,8 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="placesTableView" destination="8Je-Cx-lar" id="ffe-ve-sPE"/>
+                        <segue destination="7ks-wB-UuV" kind="presentation" identifier="editLocation" id="yQC-Yk-p23"/>
+                        <segue destination="7ks-wB-UuV" kind="presentation" identifier="addLocation" id="zGV-rB-Eia"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8vi-Kw-Zv3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -365,6 +367,6 @@
         <image name="mapWithPin" width="300" height="130"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="OyV-6C-Wd0"/>
+        <segue reference="zGV-rB-Eia"/>
     </inferredMetricsTieBreakers>
 </document>

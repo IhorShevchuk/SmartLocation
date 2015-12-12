@@ -8,13 +8,16 @@
 #import <CoreData/CoreData.h>
 
 #import "SPSavedPlacesViewController.h"
+#import "SPAddEditLocationViewController.h"
 
 #import "SPPlaceTableViewCell.h"
 #import "SPCoreDataManager.h"
+#import "TMFloatingButton.h"
 NSString * const placeCellIdentifirier = @"PlaceCell";
 @interface SPSavedPlacesViewController()<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *placesTableView;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) SPPlace *selectedPlace;
 @end
 
 @implementation SPSavedPlacesViewController
@@ -22,6 +25,21 @@ NSString * const placeCellIdentifirier = @"PlaceCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupTableView];
+    [self setupAddButton];
+}
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.placesTableView reloadData];
+}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqualToString:@"editLocation"]|| [segue.identifier isEqualToString:@"addLocation"]) {
+        
+        if([segue.identifier isEqualToString:@"editLocation"]) {
+            SPAddEditLocationViewController *destination = segue.destinationViewController;
+            destination.place = self.selectedPlace;
+            self.selectedPlace = nil;
+        }
+    }
 }
 - (NSFetchedResultsController *)fetchedResultsController
 {
@@ -50,6 +68,11 @@ NSString * const placeCellIdentifirier = @"PlaceCell";
     [self.placesTableView registerNib:[UINib nibWithNibName:@"SPPlaceTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:placeCellIdentifirier];
     [self.placesTableView reloadData];
 }
+- (void)setupAddButton {
+    TMFloatingButton *addButton = [[TMFloatingButton alloc]initWithSuperView:self.view];
+    [addButton addStateWithText:@"add" withAttributes:@{} andBackgroundColor:MainAppColor forName:@"add" applyRightNow:YES];
+    [addButton addTarget:self action:@selector(addNewPinAction:) forControlEvents:UIControlEventTouchUpInside];
+}
 #pragma mark - UITableViewDataSource & UITableViewDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -76,5 +99,15 @@ NSString * const placeCellIdentifirier = @"PlaceCell";
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 80;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    SPPlace *place = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    self.selectedPlace = place;
+    [self performSegueWithIdentifier:@"editLocation" sender:self];
+}
+#pragma mark - Buttons Actions
+- (void)addNewPinAction:(id)sender {
+    [self performSegueWithIdentifier:@"addLocation" sender:self];
 }
 @end

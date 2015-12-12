@@ -7,13 +7,18 @@
 //
 #import <MapKit/MapKit.h>
 
+#import "AFNetworking.h"
 #import "SPMapViewController.h"
+#import "SPAddEditLocationViewController.h"
+
 #import "SPPinAnnotation.h"
 #import "UINavigationBar+BackgroundColor.h"
 #import "TMFloatingButton.h"
 #import "SPCoreDataManager.h"
+#import "SPFindMyLocation.h"
 @interface SPMapViewController ()<MKMapViewDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mainMapView;
+@property (strong, nonatomic) SPPlace *selectedPlace;
 @end
 
 @implementation SPMapViewController
@@ -21,21 +26,22 @@
 #pragma mark - Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     // Do any additional setup after loading the view.
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     [self setupNavigationBar];
     [self setupAddButton];
-    [self setupMap];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    NSSet *plases = [SPCoreDataManager getCurrentUser].places;
-    [self addPlacesToMap:plases];
+
 }
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-
+    [self setupMap];
+    NSSet *plases = [SPCoreDataManager getCurrentUser].places;
+    [self addPlacesToMap:plases];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -45,7 +51,9 @@
     if([segue.identifier isEqualToString:@"editLocation"]|| [segue.identifier isEqualToString:@"addLocation"]) {
         
         if([segue.identifier isEqualToString:@"editLocation"]) {
-            //TODO: add edited location
+            SPAddEditLocationViewController *destination = segue.destinationViewController;
+            destination.place = self.selectedPlace;
+            self.selectedPlace = nil;
         }
     }
 }
@@ -68,15 +76,19 @@
 }
 - (void)setupMap {
     self.mainMapView.delegate = self;
+    __weak SPMapViewController *selfWeak = self;
+    [SPFindMyLocation findMyLocation:^(CLLocationCoordinate2D coordinates,NSError *errorMessage){
+        if(errorMessage != nil) {
+        selfWeak.mainMapView.showsUserLocation = YES;
+        [selfWeak.mainMapView setRegion:MKCoordinateRegionMake(coordinates, MKCoordinateSpanMake(0.11, 0.11)) animated:YES];
+        }
+    }];
 }
 - (void)addPlacesToMap:(NSSet*)places {
     NSMutableArray *annotations = [[NSMutableArray alloc]initWithCapacity:places.count];
     NSArray *annotationsToRemove = self.mainMapView.annotations;
     for(SPPlace *place in places) {
-        CLLocationCoordinate2D coordinates;
-        coordinates.latitude = [place.lat doubleValue];
-        coordinates.longitude = [place.lon doubleValue];
-        SPPinAnnotation *annotationToAdd = [[SPPinAnnotation alloc]initWithCoordinate:coordinates andTitle:place.name andSubTitle:place.formattedAddres];
+        SPPinAnnotation *annotationToAdd = [[SPPinAnnotation alloc]initWithPlace:place];
         [annotations addObject:annotationToAdd];
     }
     
@@ -106,9 +118,19 @@
         annotationView.canShowCallout = YES;
         annotationView.draggable = NO;
         annotationView.animatesDrop = YES;
+        annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeInfoLight];
     }
     
     return annotationView;
+}
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view
+calloutAccessoryControlTapped:(UIControl *)control
+{
+    SPPinAnnotation *pinAnnotation = view.annotation;
+    if([pinAnnotation isKindOfClass:[SPPinAnnotation class]]) {
+        self.selectedPlace = pinAnnotation.place;
+        [self performSegueWithIdentifier:@"editLocation" sender:self];
+    }
 }
 /*
 #pragma mark - Navigation
