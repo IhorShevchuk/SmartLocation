@@ -60,7 +60,7 @@
 #pragma mark - UI
 - (void)setupAddButton {
     TMFloatingButton *addButton = [[TMFloatingButton alloc]initWithSuperView:self.view];
-    [addButton addStateWithText:@"add" withAttributes:@{} andBackgroundColor:MainAppColor forName:@"add" applyRightNow:YES];
+    [addButton addStateWithIcon:[UIImage imageNamed:@"plus_icon"] andBackgroundColor:MainAppColor forName:@"add" applyRightNow:YES];
     [addButton addTarget:self action:@selector(addNewPinAction:) forControlEvents:UIControlEventTouchUpInside];
 }
 - (void)setupNavigationBar {
@@ -68,8 +68,7 @@
     UIBarButtonItem *menuButton = [[UIBarButtonItem alloc]initWithImage:[JASidePanelController defaultImage] style:UIBarButtonItemStylePlain target:self action:@selector(toggleSideMenu:)];
     self.navigationItem.leftBarButtonItem = menuButton;
     
-    //TODO: add image
-    UIBarButtonItem *goToMyLocationButton = [[UIBarButtonItem alloc]initWithImage:nil style:UIBarButtonItemStylePlain target:self action:@selector(goToMyLocation:)];
+    UIBarButtonItem *goToMyLocationButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"find_my_location"] style:UIBarButtonItemStylePlain target:self action:@selector(goToMyLocation:)];
     self.navigationItem.rightBarButtonItem = goToMyLocationButton;
     
     [self.navigationController.navigationBar showWithColor:MainAppColor];
@@ -78,7 +77,7 @@
     self.mainMapView.delegate = self;
     __weak SPMapViewController *selfWeak = self;
     [SPFindMyLocation findMyLocation:^(CLLocationCoordinate2D coordinates,NSError *errorMessage){
-        if(errorMessage != nil) {
+        if(errorMessage == nil) {
         selfWeak.mainMapView.showsUserLocation = YES;
         [selfWeak.mainMapView setRegion:MKCoordinateRegionMake(coordinates, MKCoordinateSpanMake(0.11, 0.11)) animated:YES];
         }
@@ -86,13 +85,14 @@
 }
 - (void)addPlacesToMap:(NSSet*)places {
     NSMutableArray *annotations = [[NSMutableArray alloc]initWithCapacity:places.count];
-    NSArray *annotationsToRemove = self.mainMapView.annotations;
+    NSMutableArray *annotationsToRemove = [self.mainMapView.annotations mutableCopy];
     for(SPPlace *place in places) {
         SPPinAnnotation *annotationToAdd = [[SPPinAnnotation alloc]initWithPlace:place];
         [annotations addObject:annotationToAdd];
     }
     
     [self.mainMapView addAnnotations:annotations];
+    [annotationsToRemove removeObject:self.mainMapView.userLocation];
     [self.mainMapView removeAnnotations:annotationsToRemove];
 }
 #pragma mark - Buttons Actions
@@ -100,13 +100,30 @@
     [[JASidePanelController sharedInstance] toggleLeftPanel:self];
 }
 - (void)goToMyLocation:(id)sender {
-    
+    __weak SPMapViewController *selfWeak = self;
+    [SPFindMyLocation findMyLocation:^(CLLocationCoordinate2D coordinates,NSError *errorMessage){
+       if(errorMessage != nil) {
+           return;
+       }
+            MKCoordinateRegion region;
+            MKCoordinateSpan span;
+            span.latitudeDelta = 0.005;
+            span.longitudeDelta = 0.005;
+            region.span = span;
+            region.center = coordinates;
+            [selfWeak.mainMapView setRegion:region animated:YES];
+    }];
 }
 - (void)addNewPinAction:(id)sender {
     [self performSegueWithIdentifier:@"addLocation" sender:self];
 }
 #pragma mark - MKMapViewDelegate
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    
+    if([annotation isEqual:mapView.userLocation]) {
+        return nil;
+    }
+    
     static NSString *GeoPointAnnotationIdentifier = @"RedPin";
     
     MKPinAnnotationView *annotationView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:GeoPointAnnotationIdentifier];

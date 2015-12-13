@@ -70,7 +70,7 @@ NSString * const placeCellIdentifirier = @"PlaceCell";
 }
 - (void)setupAddButton {
     TMFloatingButton *addButton = [[TMFloatingButton alloc]initWithSuperView:self.view];
-    [addButton addStateWithText:@"add" withAttributes:@{} andBackgroundColor:MainAppColor forName:@"add" applyRightNow:YES];
+    [addButton addStateWithIcon:[UIImage imageNamed:@"plus_icon"] andBackgroundColor:MainAppColor forName:@"add" applyRightNow:YES];
     [addButton addTarget:self action:@selector(addNewPinAction:) forControlEvents:UIControlEventTouchUpInside];
 }
 #pragma mark - UITableViewDataSource & UITableViewDelegate

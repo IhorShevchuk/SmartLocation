@@ -131,6 +131,7 @@
     }
     cell.indexPath = indexPath;
     cell.delegate = self;
+    cell.rightTextField.clearButtonMode = UITextFieldViewModeAlways;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
@@ -248,6 +249,7 @@
         annotationPoint = selfWeak.annotationToShowPlace.annotation;
         annotationPoint.title = selfWeak.place.name;
         annotationPoint.subtitle = formattedAddres;
+        selfWeak.addressCell.rightTextField.text = formattedAddres;
     }];
     
     self.annotationToShowPlace.draggable = YES;
@@ -258,21 +260,7 @@
 
         return nil;
     }
-    static NSString *GeoPointAnnotationIdentifier = @"RedPin";
-    
     return self.annotationToShowPlace;
-    MKPinAnnotationView *annotationView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:GeoPointAnnotationIdentifier];
-    
-//    if (!annotationView)
-//    {
-        annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:GeoPointAnnotationIdentifier];
-        annotationView.pinColor = MKPinAnnotationColorRed;
-        annotationView.canShowCallout = YES;
-        annotationView.draggable = YES;
-        annotationView.animatesDrop = YES;
-//    }
-    
-    return annotationView;
 }
 - (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray<MKAnnotationView *> *)views {
     for(MKAnnotationView *annotationView in views) {
