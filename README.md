@@ -11,8 +11,16 @@ Simple Example of MKMapKit and FacebookSDK
 2) Open destination folder in terminal and run `pod install`
 
 3) Open `smartplaces.xcworkspace` in Xcode and build
+
+p.s When Schemes shows "No Scheme" option
+
+**No Scheme** -> **Manage Scheme** -> then click the button **Autocreate Schemes Now**
+
 #####TODO
 * Ability to remove Places
+
+
+
 ## License
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
